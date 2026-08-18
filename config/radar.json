@@ -1,0 +1,63 @@
+{
+  "timezone": "Asia/Shanghai",
+  "max_candidates": 80,
+  "shortlist_size": 12,
+  "top_n": 8,
+  "state_path": "data/seen.json",
+  "report_dir": "reports",
+  "topic_weights": {
+    "engineering_systems": 0.60,
+    "github_ai_infra": 0.25,
+    "paper_research": 0.15
+  },
+  "keywords": {
+    "engineering_systems": ["ai systems", "ml systems", "profiling", "performance", "optimization", "inference", "training", "serving", "observability", "data pipeline", "evaluation", "experiment", "mlops", "gpu", "cpu", "io"],
+    "github_ai_infra": ["agent", "workflow", "framework", "tooling", "open source", "github", "mlflow", "dvc", "hugging face", "weights & biases", "infrastructure"],
+    "paper_research": ["arxiv", "paper", "benchmark", "sota", "time series", "electricity forecasting", "forecasting", "research"]
+  },
+  "source_priority": {
+    "OpenAI": 1.00,
+    "Anthropic": 0.96,
+    "Google Research": 0.94,
+    "Netflix Tech Blog": 0.90,
+    "Uber Engineering": 0.90,
+    "Meta Engineering": 0.90,
+    "Cloudflare": 0.88,
+    "Databricks": 0.88,
+    "NVIDIA": 0.90,
+    "Simon Willison": 0.88,
+    "Lilian Weng": 0.90,
+    "GitHub Search": 0.78,
+    "arXiv": 0.72
+  },
+  "hype_terms": ["revolutionary", "game changer", "10x", "magic", "killer", "震撼", "颠覆"],
+  "rss_sources": [
+    {"name": "OpenAI", "url": "https://openai.com/news/rss.xml"},
+    {"name": "Anthropic", "url": "https://www.anthropic.com/news/rss.xml"},
+    {"name": "Netflix Tech Blog", "url": "https://netflixtechblog.com/feed"},
+    {"name": "Uber Engineering", "url": "https://www.uber.com/blog/engineering/rss/"},
+    {"name": "Cloudflare", "url": "https://blog.cloudflare.com/tag/ai/rss/"},
+    {"name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/"},
+    {"name": "Lilian Weng", "url": "https://lilianweng.github.io/index.xml"}
+  ],
+  "github_queries": [
+    "ml systems stars:>300 pushed:>2026-01-01",
+    "agent framework stars:>500 pushed:>2026-01-01",
+    "inference serving llm stars:>300 pushed:>2026-01-01",
+    "time series forecasting stars:>200 pushed:>2026-01-01"
+  ],
+  "arxiv_queries": [
+    "cat:cs.LG AND (\"ML systems\" OR \"model serving\" OR \"time series forecasting\")",
+    "cat:cs.DC AND (\"machine learning\" OR \"inference\" OR \"data pipeline\")"
+  ],
+  "publishers": {
+    "telegram": {"enabled": true},
+    "wecom": {"enabled": false}
+  },
+  "llm": {
+    "enabled": false,
+    "base_url_env": "LLM_BASE_URL",
+    "api_key_env": "LLM_API_KEY",
+    "model_env": "LLM_MODEL"
+  }
+}
