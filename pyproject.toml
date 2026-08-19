@@ -4,14 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "research-engineer-radar"
-version = "0.3.0"
-description = "A lightweight daily radar for AI research engineering signals with source health, ranking, enrichment, and Telegram delivery."
+version = "0.5.0"
+description = "A conversational research navigator with source tracing, multi-source retrieval, ranking, and Telegram delivery."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
 
 [project.scripts]
 radar = "radar.main:main"
+radar-telegram = "radar.telegram.bot:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
