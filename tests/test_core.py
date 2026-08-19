@@ -10,7 +10,7 @@ from radar.collectors.github_search import build_github_query
 from radar.collectors.rss import collect_rss, parse_feed
 from radar.collectors.sitemap import parse_sitemap
 from radar.config import load_config
-from radar.digest.markdown import render_digest
+from radar.digest.markdown import render_digest, render_telegram_digest
 from radar.models import CollectorResult, LLMAnalysis, RadarItem, RankedItem, RunStats
 from radar.processing.normalize import canonical_url, deduplicate_items, title_fingerprint
 from radar.publishers.telegram import compact_for_telegram, split_message as split_telegram
@@ -19,25 +19,40 @@ from radar.state.seen import SeenState
 
 
 BASE_CONFIG = {
-    "topic_weights": {"engineering_systems": 0.6, "paper_research": 0.4},
-    "keywords": {
-        "engineering_systems": ["profiling", "inference", "data pipeline", "serving", "benchmark"],
-        "paper_research": ["time series", "forecasting", "concept drift", "paper"],
+    "topic_weights": {
+        "agent_engineering": 0.3,
+        "engineering_methodology": 0.25,
+        "performance_ai_systems": 0.25,
+        "frontier_research_tools": 0.2,
     },
-    "engineering_terms": ["profiling", "inference", "pipeline", "benchmark", "serving"],
+    "keywords": {
+        "agent_engineering": ["agent", "tool calling", "checkpoint", "evaluation"],
+        "engineering_methodology": ["profiling", "bottleneck", "benchmark", "observability"],
+        "performance_ai_systems": ["gpu", "batching", "cache", "latency", "throughput"],
+        "frontier_research_tools": ["openai", "anthropic", "time series", "forecasting"],
+    },
+    "methodology_terms": ["profiling", "bottleneck", "benchmark", "evaluation", "observability", "failure analysis"],
+    "engineering_terms": ["profiling", "gpu", "batching", "cache", "latency", "throughput", "tool calling", "checkpoint"],
+    "production_terms": ["production", "reliability", "observability", "failure", "retry", "checkpoint", "evaluation"],
+    "transfer_terms": ["framework", "design", "benchmark", "evaluation", "profiling", "agent", "inference", "forecasting"],
     "action_terms": ["benchmark", "github", "code", "implementation"],
-    "project_transfer_terms": ["time series", "forecasting", "concept drift", "electricity"],
-    "source_priority": {"OpenAI": 1.0, "GitHub Search": 0.74, "arXiv": 0.72, "Unknown": 0.2},
+    "source_priority": {"OpenAI": 1.0, "GitHub Search": 0.76, "arXiv": 0.74, "Unknown": 0.2},
     "hype_terms": ["game changer", "magic"],
+    "demo_only_terms": ["agent in 5 minutes"],
+    "shallow_tutorial_terms": ["for beginners"],
     "ranking_weights": {
-        "topic_alignment": 0.28,
-        "engineering_value": 0.2,
-        "source_quality": 0.14,
-        "freshness": 0.1,
-        "actionability": 0.12,
-        "project_transferability": 0.1,
-        "github_signal": 0.06,
-        "hype_penalty": 0.12,
+        "topic_alignment": 0.18,
+        "methodology_value": 0.18,
+        "engineering_depth": 0.17,
+        "production_value": 0.14,
+        "transferability": 0.13,
+        "actionability": 0.08,
+        "source_quality": 0.07,
+        "freshness": 0.03,
+        "github_signal": 0.02,
+        "hype_penalty": 0.10,
+        "demo_only_penalty": 0.10,
+        "shallow_tutorial_penalty": 0.07,
     },
 }
 
@@ -83,18 +98,36 @@ class CoreTest(unittest.TestCase):
         self.assertIn("pushed:>2026-08-12", query)
         self.assertNotIn("2026-01-01", query)
 
-    def test_engineering_item_ranks_above_hype(self):
-        good = RadarItem(title="Profiling inference data pipeline benchmark", url="https://a.example", source="OpenAI")
+    def test_methodology_item_ranks_above_hype(self):
+        good = RadarItem(
+            title="Profiling GPU bottlenecks with observability benchmark",
+            url="https://a.example",
+            source="OpenAI",
+            summary="measure latency throughput and validate optimization",
+        )
         hype = RadarItem(title="Game changer AI magic", url="https://b.example", source="Unknown")
         ranked = rank_items([hype, good], BASE_CONFIG)
         self.assertEqual(ranked[0].item.url, "https://a.example")
-        self.assertIn("engineering_value", ranked[0].component_scores)
+        self.assertIn("methodology_value", ranked[0].component_scores)
+        self.assertIn("engineering_depth", ranked[0].component_scores)
 
-    def test_forecast_relevant_beats_unrelated_theory(self):
-        relevant = RadarItem(title="Concept drift benchmark for time series forecasting", url="https://a.example", source="arXiv", tags=["paper"])
-        unrelated = RadarItem(title="A proof of an unrelated graph theorem", url="https://b.example", source="arXiv", tags=["paper"])
-        ranked = rank_items([unrelated, relevant], BASE_CONFIG)
+    def test_agent_reliability_beats_demo_only(self):
+        mature = RadarItem(
+            title="Agent reliability evaluation with checkpoint recovery",
+            url="https://a.example",
+            source="OpenAI",
+            summary="production failure analysis observability tool calling benchmark",
+        )
+        toy = RadarItem(
+            title="Build an agent in 5 minutes",
+            url="https://b.example",
+            source="Unknown",
+            summary="agent demo",
+        )
+        ranked = rank_items([toy, mature], BASE_CONFIG)
         self.assertEqual(ranked[0].item.url, "https://a.example")
+        toy_row = next(row for row in ranked if row.item.url == "https://b.example")
+        self.assertGreater(toy_row.component_scores["demo_only_penalty"], 0)
 
     def test_old_popular_github_repo_penalty(self):
         old_repo = RadarItem(
@@ -129,10 +162,14 @@ class CoreTest(unittest.TestCase):
             self.assertTrue(loaded.was_pushed(item))
             self.assertIn("last_seen_at", next(iter(loaded.records.values())))
 
-    def test_llm_json_parse(self):
-        content = "```json\n{\"relevance\": 8, \"engineering_value\": 9, \"novelty\": 7, \"actionability\": 6, \"project_transferability\": 5, \"what_it_is\": \"x\", \"why_it_matters\": \"y\", \"suggested_action\": \"精读\"}\n```"
+    def test_llm_json_parse_methodology_fields(self):
+        content = """```json
+{"category":"Agent Engineering","long_term_value":9,"methodology_value":10,"engineering_depth":8,"production_value":9,"transferability":9,"novelty":7,"actionability":6,"core_problem":"x","key_takeaway":"y","current_project_relation":"无明显直接关联","suggested_action":"精读"}
+```"""
         analysis = parse_analysis(content)
-        self.assertAlmostEqual(analysis.relevance, 0.8)
+        self.assertAlmostEqual(analysis.methodology_value, 1.0)
+        self.assertEqual(analysis.category, "Agent Engineering")
+        self.assertEqual(analysis.current_project_relation, "无明显直接关联")
         self.assertEqual(analysis.suggested_action, "精读")
 
     def test_llm_fallback_when_unconfigured(self):
@@ -148,26 +185,70 @@ class CoreTest(unittest.TestCase):
         compact = compact_for_telegram("排序信号：x\n" + ("a" * 13000), max_chars=200)
         self.assertLessEqual(len(compact), 260)
 
-    def test_digest_uses_llm_analysis_and_stats(self):
+    def test_full_report_keeps_debug_but_hides_forced_project_relation(self):
         stats = RunStats()
         stats.add_collector(CollectorResult(source="OpenAI", items=[RadarItem("A", "https://a", "OpenAI")], status="OK", latency_seconds=0.1))
         ranked = RankedItem(
-            item=RadarItem(title="Inference Profiling", url="https://example.com", source="OpenAI", summary="profile serving"),
+            item=RadarItem(title="Agent Reliability", url="http://example.com", source="OpenAI", summary="agent reliability"),
             score=0.8,
-            reasons=["engineering_systems: profiling"],
-            action="尝试",
-            component_scores={"engineering_value": 0.8},
-            llm=LLMAnalysis(what_it_is="推理性能分析实践", why_it_matters="能直接学习 profiling 方法", ability_tree_relation="训练系统判断力", current_project_relation="可迁移到预测流水线瓶颈定位", suggested_action="尝试", relevance=0.9, engineering_value=0.9, actionability=0.8),
+            reasons=["agent_engineering: agent"],
+            action="精读",
+            component_scores={"methodology_value": 0.8},
+            llm=LLMAnalysis(
+                category="Agent Engineering",
+                core_problem="Agent 长任务失败后如何恢复",
+                key_takeaway="checkpoint 加 state validation",
+                when_to_recall="设计长任务 Agent 时",
+                current_project_relation="无明显直接关联",
+                suggested_action="精读",
+                long_term_value=0.9,
+                methodology_value=0.9,
+                engineering_depth=0.8,
+                production_value=0.9,
+                transferability=0.9,
+            ),
         )
         text = render_digest([ranked], stats=stats)
         self.assertIn("Source Health", text)
-        self.assertIn("推理性能分析实践", text)
-        self.assertIn("预测流水线瓶颈定位", text)
+        self.assertIn("checkpoint 加 state validation", text)
+        self.assertNotIn("当前工作可选关联", text)
+        self.assertIn("https://example.com", text)
+
+    def test_telegram_digest_is_mobile_first(self):
+        ranked = RankedItem(
+            item=RadarItem(title="Agent Reliability", url="http://example.com", source="OpenAI", summary="agent reliability"),
+            score=0.9,
+            action="精读",
+            component_scores={"methodology_value": 1.0, "source_quality": 1.0},
+            llm=LLMAnalysis(
+                category="Agent Engineering",
+                core_problem="Agent 长任务失败后如何恢复",
+                key_takeaway="不要只 retry，要 checkpoint + state validation",
+                when_to_recall="做长任务 Agent 时",
+                agent_insight="恢复能力必须成为架构的一部分",
+                current_project_relation="无明显直接关联",
+                suggested_action="精读",
+                long_term_value=1.0,
+                methodology_value=1.0,
+                engineering_depth=0.9,
+                production_value=1.0,
+                transferability=1.0,
+            ),
+        )
+        text = render_telegram_digest([ranked], max_items=5)
+        self.assertIn("今天最值得看", text)
+        self.assertIn("真正值得学", text)
+        self.assertIn("Agent 启发", text)
+        self.assertNotIn("Source Health", text)
+        self.assertNotIn("Deterministic", text)
+        self.assertNotIn("当前项目", text)
 
     def test_config_loading(self):
         cfg = load_config("config/radar.json")
         self.assertGreaterEqual(cfg.top_n, 5)
-        self.assertIn("user_profile", cfg.data)
+        self.assertIn("radar_focus", cfg.data)
+        self.assertIn("agent_engineering", cfg.data["topic_weights"])
+        self.assertIn("methodology_terms", cfg.data)
 
 
 if __name__ == "__main__":
