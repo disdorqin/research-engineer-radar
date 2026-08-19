@@ -4,15 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "research-engineer-radar"
-version = "0.5.0"
-description = "A conversational research navigator with source tracing, multi-source retrieval, ranking, and Telegram delivery."
+version = "1.0.0"
+description = "Conversational Research Navigator with natural-language planning, multi-source retrieval, provenance graphs, evaluation, and Telegram delivery."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
 
 [project.scripts]
 radar = "radar.main:main"
-radar-telegram = "radar.telegram.bot:main"
+radar-navigator = "radar.telegram.bot:main"
+radar-webhook = "radar.telegram.webhook:main"
+radar-eval = "radar.eval.benchmark:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

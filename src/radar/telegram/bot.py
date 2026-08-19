@@ -10,20 +10,26 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 from radar.config import load_config
-from radar.query.planner import QueryPlan, plan_query
+from radar.query.planner import plan_query
+from radar.research.provenance import relation_label
 from radar.research.search import ResearchResult, SourceNode, research
 
 
-START_TEXT = """🔎 Research Navigator 已上线。
+START_TEXT = """🔎 Research Navigator V1.0
 
-你不需要记命令，直接说人话就行，例如：
-• 最近 Agent evaluation 有什么值得看的？
-• 找最近一周 OpenAI / Anthropic 关于 Agent 设计的一手来源。
-• Agent Skills 为什么最近突然变热？顺着来源继续往下找。
+直接说人话，不需要记命令。你可以这样问：
+• 最近 Agent evaluation 有什么真正值得看的？优先一手来源。
+• Agent Skills 为什么突然变热？帮我找源头，再顺着论文、代码和作者讨论往下找。
 • 找 GPU utilization 的工程文章，不要浅教程。
+• 最近一周 OpenAI / Anthropic 在 Agent 设计上有什么新东西？
 • 深挖第 2 条。
+• 把第 3 条追到源头。
+• 只看论文和代码。
+• 这个链接继续往下挖：https://...
 
-我会先把你的自然语言拆成 topic、检索意图、时间范围、关键词和平台，再做多源检索，并尽量沿链接追溯到论文、官方博客、GitHub、X 或 YouTube。"""
+我会先把自然语言拆成 Topic / Intent / 时间范围 / 关键词 / 子查询 / 平台 / 一手来源偏好，再进行多源检索和来源链探索。"""
+
+_GREETING_RE = re.compile(r"^\s*(/start|/help|start|help|hello|hi|hey|你好|您好|嗨|哈喽|帮助|怎么用)[!！。.？?\s]*$", re.I)
 
 
 def _api_url(token: str, method: str) -> str:
@@ -32,14 +38,9 @@ def _api_url(token: str, method: str) -> str:
 
 def _request_json(url: str, payload: dict | None = None, timeout: int = 30) -> dict:
     if payload is None:
-        request = Request(url, headers={"User-Agent": "research-navigator/0.5"})
+        request = Request(url, headers={"User-Agent": "research-navigator/1.0"})
     else:
-        request = Request(
-            url,
-            data=urlencode(payload).encode("utf-8"),
-            headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": "research-navigator/0.5"},
-            method="POST",
-        )
+        request = Request(url, data=urlencode(payload).encode("utf-8"), headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": "research-navigator/1.0"}, method="POST")
     with urlopen(request, timeout=timeout) as response:
         return json.loads(response.read().decode("utf-8"))
 
@@ -77,42 +78,23 @@ def _ordinal(text: str) -> int | None:
     return mapping.get(raw)
 
 
+def _first_url(text: str) -> str | None:
+    match = re.search(r"https?://[^\s<>\]）)]+", text)
+    return match.group(0).rstrip("，。！？；;") if match else None
+
+
 def _badge(node: SourceNode) -> str:
-    return {
-        "paper": "📄",
-        "code": "💻",
-        "x": "𝕏",
-        "video": "▶️",
-        "discussion": "💬",
-        "web": "🌐",
-    }.get(node.kind, "🌐")
+    return {"paper": "📄", "code": "💻", "x": "𝕏", "video": "▶️", "discussion": "💬", "web": "🌐"}.get(node.kind, "🌐")
 
 
 def _source_quality(node: SourceNode) -> str:
-    if node.primary_score >= 0.88:
-        return "一手/高可信"
-    if node.primary_score >= 0.65:
+    if node.primary_score >= 0.90:
+        return "一手/官方"
+    if node.primary_score >= 0.75:
+        return "高可信"
+    if node.primary_score >= 0.55:
         return "较强来源"
-    return "延伸来源"
-
-
-def _chain(node: SourceNode, result: ResearchResult) -> str:
-    if not node.discovered_from:
-        return ""
-    by_url = {row.url: row for row in result.nodes}
-    names = [node.title[:42]]
-    cursor = node.discovered_from
-    seen: set[str] = set()
-    while cursor and cursor not in seen and len(names) < 4:
-        seen.add(cursor)
-        parent = by_url.get(cursor)
-        if not parent:
-            names.append(cursor)
-            break
-        names.append(parent.title[:42])
-        cursor = parent.discovered_from
-    names.reverse()
-    return " → ".join(names)
+    return "延伸讨论"
 
 
 def _short(value: str, limit: int = 180) -> str:
@@ -120,36 +102,79 @@ def _short(value: str, limit: int = 180) -> str:
     return value if len(value) <= limit else value[: limit - 1].rstrip() + "…"
 
 
+def _intent_label(intent: str) -> str:
+    return {"latest": "最新", "hot": "热点", "primary_sources": "一手来源", "deep_research": "深挖", "source_trace": "追溯源头", "compare": "对比", "explain": "解释", "general_search": "综合检索"}.get(intent, intent)
+
+
+def _chain(node: SourceNode, result: ResearchResult) -> str:
+    if not node.discovered_from:
+        return ""
+    by_url = {row.url: row for row in result.nodes}
+    parts = [node.title[:36]]
+    relations = [relation_label(node.relation)]
+    cursor = node.discovered_from
+    seen: set[str] = set()
+    while cursor and cursor not in seen and len(parts) < 4:
+        seen.add(cursor)
+        parent = by_url.get(cursor)
+        if not parent:
+            parts.append(cursor[:36])
+            break
+        parts.append(parent.title[:36])
+        if parent.discovered_from:
+            relations.append(relation_label(parent.relation))
+        cursor = parent.discovered_from
+    parts.reverse()
+    relations.reverse()
+    if len(parts) <= 1:
+        return ""
+    chain = parts[0]
+    for idx, name in enumerate(parts[1:]):
+        rel = relations[idx] if idx < len(relations) else "链接到"
+        chain += f" —{rel}→ {name}"
+    return chain
+
+
 def render_search_result(result: ResearchResult, max_items: int = 6) -> str:
     plan = result.plan
-    lines = [
-        f"🔎 {plan.topic}",
-        f"检索理解：{plan.intent} · 最近 {plan.timeframe_days} 天 · 深度 {plan.depth}",
-        "",
-    ]
+    lines = [f"🔎 {plan.topic}", f"{_intent_label(plan.intent)} · 最近 {plan.timeframe_days} 天" + (" · 优先一手" if plan.primary_only else "") + (f" · 深度 {plan.depth}" if plan.depth > 1 else ""), ""]
     visible = result.nodes[:max_items]
     if not visible:
-        lines.append("这次没有找到足够可靠的结果。你可以换一种说法，或扩大时间范围。")
+        lines.append("这次没有找到足够可靠的结果。可以扩大时间范围，或换一种表达。")
         return "\n".join(lines)
-
     for idx, node in enumerate(visible, start=1):
         lines.append(f"{idx}. {_badge(node)} {node.title}")
         lines.append(f"{node.source} · {_source_quality(node)}")
         if node.summary:
-            lines.append(_short(node.summary, 220))
+            lines.append(_short(node.summary, 210))
         chain = _chain(node, result)
         if chain:
-            lines.append(f"🔗 来源链：{_short(chain, 240)}")
+            lines.append(f"🔗 {_short(chain, 260)}")
         lines.append(node.url)
         lines.append("")
-
     if result.edges:
-        lines.append(f"🌳 本轮已建立 {len(result.edges)} 条来源关系；可以继续说“深挖第2条”或“把第3条追到源头”。")
+        lines.append("🌳 已建立来源关系。可以直接说“深挖第2条”“把第3条追到源头”或“找作者的 X / YouTube”。")
     else:
-        lines.append("你可以继续说：深挖第2条 / 只看一手来源 / 找作者的 X 和 YouTube / 换成最近24小时。")
-    if result.warnings:
-        lines.append(f"部分来源暂不可用：{', '.join(result.warnings[:2])}")
+        lines.append("继续说：深挖第2条 / 只看一手来源 / 只看论文和代码 / 换成最近24小时。")
     return "\n".join(lines).strip()
+
+
+def _provider_status(config: dict) -> str:
+    cfg = config.get("interactive_search", {})
+    x_env = cfg.get("x_bearer_token_env", "X_BEARER_TOKEN")
+    yt_env = cfg.get("youtube_api_key_env", "YOUTUBE_API_KEY")
+    searx_env = cfg.get("searxng_base_url_env", "SEARXNG_BASE_URL")
+    lines = ["🧭 Research Navigator V1.0 状态", "", "基础来源：Web / arXiv / GitHub / Hacker News ✅", f"X 官方搜索：{'✅' if os.getenv(x_env) else '↪ Web fallback'}", f"YouTube 官方搜索：{'✅' if os.getenv(yt_env) else '↪ Web fallback'}", f"SearXNG：{'✅' if os.getenv(searx_env) else '↪ DuckDuckGo fallback'}", "来源图：Best-first traversal ✅", "Provenance：引用/代码/讨论/演讲关系识别 ✅", "Observability：每轮 trace ✅"]
+    return "\n".join(lines)
+
+
+def _trace_text(chat: dict) -> str:
+    trace = chat.get("last_trace") or {}
+    if not trace:
+        return "还没有可查看的检索 Trace。先问一个问题。"
+    providers = trace.get("provider_counts") or {}
+    provider_text = " · ".join(f"{k}={v}" for k, v in providers.items()) or "none"
+    return f"🧪 Trace {trace.get('trace_id', '-')}\n耗时：{trace.get('duration_ms', 0)} ms\n节点：{trace.get('nodes', 0)} · 关系：{trace.get('edges', 0)} · 深挖页面：{trace.get('crawl_fetches', 0)}\n来源：{provider_text}\nwarnings：{len(trace.get('warnings') or [])}"
 
 
 class TelegramResearchBot:
@@ -182,9 +207,10 @@ class TelegramResearchBot:
 
     def _chat_state(self, chat_id: str) -> dict:
         chats = self.state.setdefault("chats", {})
-        state = chats.setdefault(chat_id, {"history": [], "last_results": [], "last_topic": "", "last_query": ""})
+        state = chats.setdefault(chat_id, {"history": [], "last_results": [], "last_topic": "", "last_query": "", "last_trace": {}})
         state.setdefault("history", [])
         state.setdefault("last_results", [])
+        state.setdefault("last_trace", {})
         return state
 
     def send_typing(self, chat_id: str) -> None:
@@ -195,49 +221,56 @@ class TelegramResearchBot:
 
     def send_message(self, chat_id: str, text: str) -> None:
         for chunk in _chunks(text):
-            payload = _request_json(
-                _api_url(self.token, "sendMessage"),
-                {"chat_id": chat_id, "text": chunk, "disable_web_page_preview": "true"},
-                timeout=20,
-            )
+            payload = _request_json(_api_url(self.token, "sendMessage"), {"chat_id": chat_id, "text": chunk, "disable_web_page_preview": "true"}, timeout=20)
             if not payload.get("ok"):
                 raise RuntimeError(f"Telegram sendMessage failed: {payload}")
 
     def _history_for_planner(self, chat: dict) -> list[dict]:
-        history = list(chat.get("history", []))[-6:]
+        history = list(chat.get("history", []))[-8:]
         if chat.get("last_topic"):
             history.append({"role": "assistant", "content": f"上一轮研究主题：{chat['last_topic']}"})
-        return history[-7:]
+        return history[-9:]
 
     def answer(self, chat_id: str, text: str) -> str:
         chat = self._chat_state(chat_id)
         clean = text.strip()
-        if clean in {"/start", "/help", "start", "帮助", "怎么用"}:
+        lowered = clean.lower()
+        if _GREETING_RE.match(clean):
             return START_TEXT
+        if lowered in {"/status", "status", "状态"}:
+            return _provider_status(self.config)
+        if lowered in {"/trace", "trace", "调试", "本轮状态"}:
+            return _trace_text(chat)
 
         effective_text = clean
-        if chat.get("last_topic") and any(token in clean for token in ["继续", "深挖", "只看", "源头", "一手", "作者", "X", "YouTube", "油管", "第"]):
+        continuation_tokens = ["继续", "深挖", "只看", "只要", "源头", "一手", "作者", "x", "youtube", "油管", "第", "换成", "追到"]
+        if chat.get("last_topic") and any(token in lowered for token in continuation_tokens):
             effective_text = f"围绕上一轮主题“{chat['last_topic']}”，用户继续要求：{clean}"
-
         history = self._history_for_planner(chat)
         plan = plan_query(effective_text, self.config, history=history)
-        seed_url: str | None = None
+
+        seed_url = _first_url(clean)
         index = _ordinal(clean)
-        if index is not None and index <= len(chat.get("last_results", [])):
-            seed_url = chat["last_results"][index - 1].get("url")
+        if index is not None:
+            last_results = chat.get("last_results", [])
+            if index > len(last_results):
+                return f"上一轮只有 {len(last_results)} 条可继续探索的结果，没有第 {index} 条。"
+            seed_url = last_results[index - 1].get("url")
+            plan.depth = max(plan.depth, 2)
+            if plan.intent in {"general_search", "latest", "hot"}:
+                plan.intent = "deep_research"
+        elif seed_url:
             plan.depth = max(plan.depth, 2)
             if plan.intent == "general_search":
                 plan.intent = "deep_research"
 
         result = research(plan, self.config, seed_url=seed_url)
-        visible = result.nodes[:8]
-        chat["last_results"] = [
-            {"title": node.title, "url": node.url, "source": node.source, "kind": node.kind}
-            for node in visible
-        ]
+        visible = result.nodes[:10]
+        chat["last_results"] = [{"title": node.title, "url": node.url, "source": node.source, "kind": node.kind} for node in visible]
         chat["last_topic"] = plan.topic
         chat["last_query"] = clean
-        chat["history"] = (chat.get("history", []) + [{"role": "user", "content": clean}])[-8:]
+        chat["last_trace"] = result.trace.to_dict() if result.trace else {}
+        chat["history"] = (chat.get("history", []) + [{"role": "user", "content": clean}, {"role": "assistant", "content": f"已检索主题：{plan.topic}"}])[-10:]
         self.save_state()
         return render_search_result(result, max_items=int(self.config.get("interactive_search", {}).get("telegram_max_items", 6)))
 
@@ -257,7 +290,7 @@ class TelegramResearchBot:
             reply = self.answer(chat_id, text)
         except Exception as exc:
             print(f"[telegram] query failed: {exc}")
-            reply = f"这次检索失败了：{type(exc).__name__}: {exc}\n\n你可以稍后重试，或者先缩小搜索范围。"
+            reply = f"这次检索失败了：{type(exc).__name__}: {exc}\n\n可以稍后重试，或先缩小搜索范围。"
         self.send_message(chat_id, reply)
 
     def get_updates(self, timeout_seconds: int = 20) -> list[dict]:
@@ -278,10 +311,11 @@ class TelegramResearchBot:
 
     def serve(self, seconds: int = 1620) -> None:
         deadline = time.monotonic() + max(1, seconds)
-        print(f"[telegram] Research Navigator live for up to {seconds}s")
+        print(f"[telegram] Research Navigator V1.0 live for up to {seconds}s")
         while time.monotonic() < deadline:
             try:
-                self.poll_once(timeout_seconds=min(20, max(1, int(deadline - time.monotonic()))))
+                remaining = max(1, int(deadline - time.monotonic()))
+                self.poll_once(timeout_seconds=min(20, remaining))
             except Exception as exc:
                 print(f"[telegram] polling error: {exc}")
                 time.sleep(3)
@@ -296,13 +330,11 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--serve-seconds", type=int, default=1620, help="Long-poll service window in seconds")
     parser.add_argument("--query", default="", help="Run one research query locally and print the Telegram-style result")
     args = parser.parse_args(argv)
-
     if args.query:
         cfg = load_config(args.config)
         plan = plan_query(args.query, cfg.data)
         print(render_search_result(research(plan, cfg.data)))
         return
-
     bot = TelegramResearchBot(args.config)
     if args.once:
         bot.poll_once(timeout_seconds=2)
