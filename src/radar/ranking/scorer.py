@@ -57,20 +57,26 @@ def rank_items(items: list[RadarItem], config: dict, limit: int | None = None) -
     topic_weights = config.get("topic_weights", {})
     keywords = config.get("keywords", {})
     source_priority = config.get("source_priority", {})
-    hype_terms = [term.lower() for term in config.get("hype_terms", [])]
     engineering_terms = config.get("engineering_terms", [])
+    methodology_terms = config.get("methodology_terms", [])
+    production_terms = config.get("production_terms", [])
+    transfer_terms = config.get("transfer_terms", [])
     action_terms = config.get("action_terms", [])
-    transfer_terms = config.get("project_transfer_terms", [])
+    hype_terms = [term.lower() for term in config.get("hype_terms", [])]
+    demo_only_terms = [term.lower() for term in config.get("demo_only_terms", [])]
+    shallow_terms = [term.lower() for term in config.get("shallow_tutorial_terms", [])]
     ranking_weights = config.get("ranking_weights", {})
 
     weights = {
-        "topic_alignment": float(ranking_weights.get("topic_alignment", 0.28)),
-        "engineering_value": float(ranking_weights.get("engineering_value", 0.20)),
-        "source_quality": float(ranking_weights.get("source_quality", 0.14)),
-        "freshness": float(ranking_weights.get("freshness", 0.10)),
-        "actionability": float(ranking_weights.get("actionability", 0.12)),
-        "project_transferability": float(ranking_weights.get("project_transferability", 0.10)),
-        "github_signal": float(ranking_weights.get("github_signal", 0.06)),
+        "topic_alignment": float(ranking_weights.get("topic_alignment", 0.18)),
+        "methodology_value": float(ranking_weights.get("methodology_value", 0.18)),
+        "engineering_depth": float(ranking_weights.get("engineering_depth", 0.17)),
+        "production_value": float(ranking_weights.get("production_value", 0.14)),
+        "transferability": float(ranking_weights.get("transferability", 0.13)),
+        "actionability": float(ranking_weights.get("actionability", 0.08)),
+        "source_quality": float(ranking_weights.get("source_quality", 0.07)),
+        "freshness": float(ranking_weights.get("freshness", 0.03)),
+        "github_signal": float(ranking_weights.get("github_signal", 0.02)),
     }
 
     ranked: list[RankedItem] = []
@@ -84,51 +90,72 @@ def rank_items(items: list[RadarItem], config: dict, limit: int | None = None) -
         topic_alignment = 0.0
         for topic, weight in topic_weights.items():
             raw, matched = _term_score(text, keywords.get(topic, []))
-            contribution = raw * float(weight)
-            topic_alignment += contribution
+            topic_alignment += raw * float(weight)
             if matched:
                 reasons.append(f"{topic}: " + ", ".join(matched[:3]))
         components["topic_alignment"] = min(topic_alignment, 1.0)
 
-        engineering_value, engineering_matched = _term_score(text, engineering_terms, cap=4)
-        components["engineering_value"] = engineering_value
+        methodology_value, methodology_matched = _term_score(text, methodology_terms, cap=4)
+        components["methodology_value"] = methodology_value
+        if methodology_matched:
+            reasons.append("methodology: " + ", ".join(methodology_matched[:3]))
+
+        engineering_depth, engineering_matched = _term_score(text, engineering_terms, cap=4)
+        components["engineering_depth"] = engineering_depth
         if engineering_matched:
             reasons.append("engineering: " + ", ".join(engineering_matched[:3]))
+
+        production_value, production_matched = _term_score(text, production_terms, cap=4)
+        components["production_value"] = production_value
+        if production_matched:
+            reasons.append("production: " + ", ".join(production_matched[:3]))
+
+        transferability, transfer_matched = _term_score(text, transfer_terms, cap=4)
+        components["transferability"] = transferability
+        if transfer_matched:
+            reasons.append("transfer: " + ", ".join(transfer_matched[:3]))
 
         actionability, action_matched = _term_score(text, action_terms, cap=3)
         components["actionability"] = actionability
         if action_matched:
             reasons.append("actionable: " + ", ".join(action_matched[:3]))
 
-        transferability, transfer_matched = _term_score(text, transfer_terms, cap=4)
-        components["project_transferability"] = transferability
-        if transfer_matched:
-            reasons.append("transfer: " + ", ".join(transfer_matched[:3]))
-
         source_quality = float(source_priority.get(item.source, 0.50))
         freshness = _freshness_score(item)
         github_signal = _github_signal(item)
         hype_penalty = 1.0 if any(term in text for term in hype_terms) else 0.0
+        demo_only_penalty = 1.0 if any(term in text for term in demo_only_terms) else 0.0
+        shallow_tutorial_penalty = 1.0 if any(term in text for term in shallow_terms) else 0.0
         old_popular_penalty = _old_popular_penalty(item)
 
-        components["source_quality"] = source_quality
-        components["freshness"] = freshness
-        components["github_signal"] = github_signal
-        components["hype_penalty"] = hype_penalty
-        components["old_popular_penalty"] = old_popular_penalty
+        components.update({
+            "source_quality": source_quality,
+            "freshness": freshness,
+            "github_signal": github_signal,
+            "hype_penalty": hype_penalty,
+            "demo_only_penalty": demo_only_penalty,
+            "shallow_tutorial_penalty": shallow_tutorial_penalty,
+            "old_popular_penalty": old_popular_penalty,
+        })
 
         if github_signal:
             reasons.append(f"github_signal:{github_signal:.2f}")
         if hype_penalty:
             reasons.append("hype_penalty")
+        if demo_only_penalty:
+            reasons.append("demo_only_penalty")
+        if shallow_tutorial_penalty:
+            reasons.append("shallow_tutorial_penalty")
         if old_popular_penalty:
             reasons.append("old_popular_repo_penalty")
 
         score = sum(components[name] * weight for name, weight in weights.items())
-        score -= hype_penalty * float(ranking_weights.get("hype_penalty", 0.12))
+        score -= hype_penalty * float(ranking_weights.get("hype_penalty", 0.10))
+        score -= demo_only_penalty * float(ranking_weights.get("demo_only_penalty", 0.10))
+        score -= shallow_tutorial_penalty * float(ranking_weights.get("shallow_tutorial_penalty", 0.07))
         score -= old_popular_penalty
         score = max(0.0, min(score, 1.0))
-        action = "精读" if score >= 0.68 else "尝试" if actionability >= 0.5 and score >= 0.45 else "收藏" if score >= 0.50 else "浏览"
+        action = "精读" if score >= 0.70 else "尝试" if actionability >= 0.5 and score >= 0.48 else "收藏" if score >= 0.52 else "浏览"
         ranked.append(RankedItem(item=item, score=round(score, 4), reasons=reasons, action=action, component_scores=components))
 
     ranked.sort(key=lambda row: row.score, reverse=True)
@@ -136,11 +163,6 @@ def rank_items(items: list[RadarItem], config: dict, limit: int | None = None) -
 
 
 def source_balanced_select(ranked: list[RankedItem], max_items: int, config: dict) -> list[RankedItem]:
-    """Soft source balancing after scoring, before expensive enrichment/LLM.
-
-    This is not a hard quota for the final report. It only prevents an early source
-    from monopolizing the shortlist candidate pool.
-    """
     if max_items <= 0:
         return []
     balance_cfg = config.get("source_balance", {})
