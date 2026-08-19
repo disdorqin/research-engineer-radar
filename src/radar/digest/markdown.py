@@ -128,7 +128,7 @@ def render_telegram_digest(
                 "",
             ])
 
-    lines.append("完整技术报告、评分与 Source Health 已保存在 GitHub Artifact。")
+    lines.append("完整技术报告与评分已保存在 GitHub Artifact。")
     return "\n".join(lines).strip() + "\n"
 
 
