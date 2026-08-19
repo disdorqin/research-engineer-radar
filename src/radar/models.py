@@ -21,41 +21,76 @@ class RadarItem:
 
 @dataclass(slots=True)
 class LLMAnalysis:
-    relevance: float = 0.0
-    engineering_value: float = 0.0
+    # v0.4: score reusable engineering/research judgment, not forced project relevance.
+    long_term_value: float = 0.0
+    methodology_value: float = 0.0
+    engineering_depth: float = 0.0
+    production_value: float = 0.0
+    transferability: float = 0.0
     novelty: float = 0.0
     actionability: float = 0.0
-    project_transferability: float = 0.0
-    what_it_is: str = ""
-    why_it_matters: str = ""
-    ability_tree_relation: str = ""
+
+    category: str = ""
+    core_problem: str = ""
+    key_takeaway: str = ""
+    design_tradeoff: str = ""
+    maturity_signal: str = ""
+    when_to_recall: str = ""
+    agent_insight: str = ""
+    performance_insight: str = ""
     current_project_relation: str = ""
     suggested_action: str = "浏览"
     experiment_idea: str = ""
 
     @property
     def score(self) -> float:
-        values = [
-            self.relevance,
-            self.engineering_value,
-            self.novelty,
-            self.actionability,
-            self.project_transferability,
-        ]
-        return max(0.0, min(sum(values) / len(values), 1.0))
+        weighted = (
+            self.long_term_value * 0.18
+            + self.methodology_value * 0.20
+            + self.engineering_depth * 0.18
+            + self.production_value * 0.15
+            + self.transferability * 0.15
+            + self.novelty * 0.07
+            + self.actionability * 0.07
+        )
+        return max(0.0, min(weighted, 1.0))
 
-    # Backward-compatible aliases used by older digest tests / reports.
+    # Backward-compatible aliases for older report/tests and external callers.
+    @property
+    def relevance(self) -> float:
+        return self.long_term_value
+
+    @property
+    def engineering_value(self) -> float:
+        return self.engineering_depth
+
+    @property
+    def project_transferability(self) -> float:
+        return self.transferability
+
+    @property
+    def what_it_is(self) -> str:
+        return self.core_problem
+
+    @property
+    def why_it_matters(self) -> str:
+        return self.key_takeaway
+
+    @property
+    def ability_tree_relation(self) -> str:
+        return self.when_to_recall
+
     @property
     def what(self) -> str:
-        return self.what_it_is
+        return self.core_problem
 
     @property
     def why(self) -> str:
-        return self.why_it_matters
+        return self.key_takeaway
 
     @property
     def capability_relation(self) -> str:
-        return self.ability_tree_relation
+        return self.when_to_recall
 
     @property
     def project_relation(self) -> str:
