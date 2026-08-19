@@ -8,7 +8,7 @@ from pathlib import Path
 from radar.ai.analyzer import analyze_shortlist, check_llm_chat, check_llm_models
 from radar.collectors import collect_arxiv, collect_github, collect_hacker_news, collect_huggingface_papers, collect_rss, collect_sitemaps
 from radar.config import load_config
-from radar.digest.markdown import render_digest
+from radar.digest.markdown import render_digest, render_telegram_digest
 from radar.enrichment import enrich_shortlist
 from radar.models import RunStats
 from radar.processing.normalize import deduplicate_items
@@ -74,17 +74,27 @@ def run(config_path: str, dry_run: bool = False) -> Path:
     stats.final_count = len(final_items)
 
     now = datetime.now()
-    digest = render_digest(final_items, now, stats=stats)
+    timezone_name = data.get("timezone", "Asia/Shanghai")
+    full_report = render_digest(final_items, now, stats=stats, timezone_name=timezone_name)
+    telegram_cfg = data.get("telegram_digest", {})
+    telegram_digest = render_telegram_digest(
+        final_items,
+        now,
+        timezone_name=timezone_name,
+        max_items=int(telegram_cfg.get("max_items", 5)),
+    )
+
     cfg.report_dir.mkdir(parents=True, exist_ok=True)
     report_path = cfg.report_dir / f"radar-{now.strftime('%Y%m%d')}.md"
-    report_path.write_text(digest, encoding="utf-8")
-    print(f"[radar] report={report_path} final_items={len(final_items)}")
+    report_path.write_text(full_report, encoding="utf-8")
+    print(f"[radar] report={report_path} final_items={len(final_items)} telegram_items={min(len(final_items), int(telegram_cfg.get('max_items', 5)))}")
 
     if dry_run:
         print("[radar] dry-run: publishers and state persistence skipped")
+        print("[radar] telegram-preview:\n" + telegram_digest)
         return report_path
 
-    sent = publish_enabled(digest, data)
+    sent = publish_enabled(telegram_digest, data)
     if final_items and sent:
         state.mark_pushed([row.item for row in final_items])
     state.save()
@@ -102,7 +112,7 @@ def check_llm(config_path: str) -> None:
     if not api_key or not base_url or not model:
         print("[radar] LLM check skipped: LLM_API_KEY / LLM_BASE_URL / LLM_MODEL not fully configured")
         return
-    timeout = int(llm_cfg.get("timeout_seconds", 45))
+    timeout = int(llm_cfg.get("timeout_seconds", 55))
     print("[radar] LLM check models: start")
     print(f"[radar] LLM check models: {'OK' if check_llm_models(base_url, api_key, timeout=min(timeout, 20)) else 'FAIL'}")
     print("[radar] LLM check chat: start")
@@ -112,7 +122,7 @@ def check_llm(config_path: str) -> None:
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Run Research Engineer Radar")
     parser.add_argument("--config", default="config/radar.json")
-    parser.add_argument("--dry-run", action="store_true", help="Generate report without publishing or persisting seen state")
+    parser.add_argument("--dry-run", action="store_true", help="Generate full report and Telegram preview without publishing or persisting seen state")
     parser.add_argument("--check-llm", action="store_true", help="Run minimal OpenAI-compatible LLM connectivity checks")
     args = parser.parse_args(argv)
     if args.check_llm:
