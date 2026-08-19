@@ -12,6 +12,8 @@ on:
       - "src/radar/query/**"
       - "src/radar/research/**"
       - "src/radar/telegram/**"
+      - "tests/test_interactive.py"
+      - "pyproject.toml"
       - ".github/workflows/telegram-navigator.yml"
 
 permissions:
