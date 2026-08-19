@@ -2,7 +2,7 @@
   "0b3991fc3353c26d01499edc": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "0b3991fc3353c26d01499edc",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "arXiv",
@@ -12,7 +12,7 @@
   "0df31711a1a9e98c0ce38151": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "0df31711a1a9e98c0ce38151",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Lilian Weng",
@@ -32,7 +32,7 @@
   "1045ca752fe6fb5c77a64151": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "1045ca752fe6fb5c77a64151",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Netflix Tech Blog",
@@ -42,7 +42,7 @@
   "10dadad0d2f4e9e70c2e851b": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "10dadad0d2f4e9e70c2e851b",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Lilian Weng",
@@ -52,37 +52,77 @@
   "1380f7766171a5a616fa9c57": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "1380f7766171a5a616fa9c57",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "OpenAI",
     "title": "The Defender’s Window",
     "url": "https://openai.com/index/the-defenders-window"
   },
+  "13dde8a751158b1645ac63f6": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "13dde8a751158b1645ac63f6",
+    "last_seen_at": "2026-08-19T15:20:11.638282+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T15:20:11.638357+00:00",
+    "source": "Hacker News",
+    "title": "Show HN: PantheonGPU – GPU health testing and AI workload benchmarking",
+    "url": "https://pantheongpu.com/"
+  },
+  "13f9471a87aca3801bed628a": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "13f9471a87aca3801bed628a",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "Show HN: Minna – On-device semantic search across your own documents (macOS)",
+    "url": "https://github.com/impel-intelligence/Minna"
+  },
   "142952f1a3a0823fc4a1fd9e": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "142952f1a3a0823fc4a1fd9e",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Netflix Tech Blog",
     "title": "Building Service Topology at Scale: Architecture, Challenges, and Lessons Learned",
     "url": "https://netflixtechblog.com/building-service-topology-at-scale-architecture-challenges-and-lessons-learned-f4b792f3f0d8"
   },
+  "1d9e5b14db405e736d3e6050": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "1d9e5b14db405e736d3e6050",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "The Feedback Cap: Lehman's laws in the age of AI agents",
+    "url": "https://adaptivesoftware.substack.com/p/your-ab-tests-are-limiting-what-your"
+  },
   "1f36da4241f6bea9bbe264fc": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "1f36da4241f6bea9bbe264fc",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "GitHub Search",
     "title": "sktime/pytorch-forecasting (4972★)",
     "url": "https://github.com/sktime/pytorch-forecasting"
   },
+  "205107fc31d9884cb33b481e": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "205107fc31d9884cb33b481e",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "LLM Inference Benchmarking",
+    "url": "https://www.digitalocean.com/blog/llm-inference-benchmarking"
+  },
   "209c9cf93fba015f97f6ee0b": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "209c9cf93fba015f97f6ee0b",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Lilian Weng",
@@ -92,7 +132,7 @@
   "22405ea1e27b33a112e59937": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "22405ea1e27b33a112e59937",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "OpenAI",
@@ -102,7 +142,7 @@
   "246181a248cc08ccc4c0e54c": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "246181a248cc08ccc4c0e54c",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "GitHub Search",
@@ -112,7 +152,7 @@
   "24b655bece51c05de560d39d": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "24b655bece51c05de560d39d",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Netflix Tech Blog",
@@ -122,7 +162,7 @@
   "25f97e26ea36c89ebde63f1a": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "25f97e26ea36c89ebde63f1a",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Cloudflare",
@@ -142,7 +182,7 @@
   "282279b12ba8a13cbdd27182": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "282279b12ba8a13cbdd27182",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "HuggingFace Papers",
@@ -159,10 +199,20 @@
     "title": "kvcache-ai/Mooncake (6318★)",
     "url": "https://github.com/kvcache-ai/Mooncake"
   },
+  "29e2797ff7d3ddb0ef22ed59": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "29e2797ff7d3ddb0ef22ed59",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "Show HN: MCP app for Android, drive apps via AI (no root, PII redacted locally)",
+    "url": "https://github.com/danielealbano/android-remote-control-mcp"
+  },
   "2bfcc2393a7285c23af674c7": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "2bfcc2393a7285c23af674c7",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "arXiv",
@@ -172,7 +222,7 @@
   "2c589c3624db62180737f576": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "2c589c3624db62180737f576",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Lilian Weng",
@@ -182,7 +232,7 @@
   "2d3f8890a9148172f964d566": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "2d3f8890a9148172f964d566",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "HuggingFace Papers",
@@ -202,12 +252,22 @@
   "2d6bfb1d4d7785102069474d": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "2d6bfb1d4d7785102069474d",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "HuggingFace Papers",
     "title": "MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement",
     "url": "https://huggingface.co/papers/2608.14221"
+  },
+  "2f00013902a29bc1e23dd248": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "2f00013902a29bc1e23dd248",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "Replit expands access to software creation with GPT-5.6 Luna",
+    "url": "https://openai.com/index/replit"
   },
   "30198853025f931c33e31ab2": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
@@ -222,7 +282,7 @@
   "332a3b0abd8c280421907668": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "332a3b0abd8c280421907668",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "HuggingFace Papers",
@@ -252,7 +312,7 @@
   "3b81110dcd9b3a7b4bc1d0c2": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "3b81110dcd9b3a7b4bc1d0c2",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Simon Willison",
@@ -262,7 +322,7 @@
   "3d3ca6aea5755318424269a9": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "3d3ca6aea5755318424269a9",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "HuggingFace Papers",
@@ -272,7 +332,7 @@
   "3fa812892533862b368a9b8d": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "3fa812892533862b368a9b8d",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Lilian Weng",
@@ -292,7 +352,7 @@
   "4041d799912094e5d71195eb": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "4041d799912094e5d71195eb",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "arXiv",
@@ -302,7 +362,7 @@
   "40f5467ebbabf387c83fc8e8": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "40f5467ebbabf387c83fc8e8",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Cloudflare",
@@ -319,10 +379,20 @@
     "title": "elizaOS/eliza (19096★)",
     "url": "https://github.com/elizaOS/eliza"
   },
+  "42c9e1c15ab1005267cacd29": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "42c9e1c15ab1005267cacd29",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Towards Better Agents for Multi-Turn User Interaction: The Next User Turn Is More Than Context",
+    "url": "http://arxiv.org/abs/2608.17499v1"
+  },
   "4307222bc7e5f2e471152174": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "4307222bc7e5f2e471152174",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Anthropic",
@@ -332,7 +402,7 @@
   "45cd7975f6d2c6418eaabda2": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "45cd7975f6d2c6418eaabda2",
-    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": true,
     "pushed_at": "2026-08-19T11:59:48.796522+00:00",
     "source": "Simon Willison",
@@ -352,7 +422,7 @@
   "4acb849c0f31d1ad8a1baa98": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "4acb849c0f31d1ad8a1baa98",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Simon Willison",
@@ -362,7 +432,7 @@
   "4dd6c1508895bb8cdd9025ad": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "4dd6c1508895bb8cdd9025ad",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "HuggingFace Papers",
@@ -372,7 +442,7 @@
   "4f45cf68d2894ffb1d2dfc66": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "4f45cf68d2894ffb1d2dfc66",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Simon Willison",
@@ -382,7 +452,7 @@
   "4f4e93f1e04c5d0c8b8786ea": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "4f4e93f1e04c5d0c8b8786ea",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Netflix Tech Blog",
@@ -392,7 +462,7 @@
   "4fdeab7a66fc6733dfa44c3f": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "4fdeab7a66fc6733dfa44c3f",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Simon Willison",
@@ -412,7 +482,7 @@
   "50082e654d59f3c3b6e967a9": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "50082e654d59f3c3b6e967a9",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "arXiv",
@@ -422,7 +492,7 @@
   "56def65bda0a22c6cb78fb99": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "56def65bda0a22c6cb78fb99",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Cloudflare",
@@ -439,10 +509,20 @@
     "title": "Composing Flow-Matching Energies with Known Physics: Generation, OOD Detection, and Inversion on PDE Fields",
     "url": "http://arxiv.org/abs/2608.18004v1"
   },
+  "5bf964a7ef5bc23a0e32eafe": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "5bf964a7ef5bc23a0e32eafe",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "VCE-Skill: Enhancing Skill Self-Evolution with Version-Change Experience",
+    "url": "http://arxiv.org/abs/2608.16544v1"
+  },
   "6023038a8912cd08a228ab14": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "6023038a8912cd08a228ab14",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "OpenAI",
@@ -462,7 +542,7 @@
   "6170e378d729f7c483af9340": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "6170e378d729f7c483af9340",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Netflix Tech Blog",
@@ -492,7 +572,7 @@
   "63b423dc501be51b6a7f6758": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "63b423dc501be51b6a7f6758",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "GitHub Search",
@@ -512,12 +592,22 @@
   "6636a35509e75a58a83fc210": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "6636a35509e75a58a83fc210",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Netflix Tech Blog",
     "title": "The Data Canary: How Netflix Validates Catalog Metadata",
     "url": "https://netflixtechblog.com/the-data-canary-how-netflix-validates-catalog-metadata-18b699d58e36"
+  },
+  "67441f917f163f62da0f2439": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "67441f917f163f62da0f2439",
+    "last_seen_at": "2026-08-19T15:20:11.638282+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T15:20:11.638357+00:00",
+    "source": "arXiv",
+    "title": "Global Simulation-Guided Dynamic Operator Scheduling for Efficient Multi-Tenant Model Serving",
+    "url": "http://arxiv.org/abs/2608.15762v1"
   },
   "67698adc3dfee8be38b61380": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
@@ -532,9 +622,9 @@
   "6c5aaefababff9fca6978549": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "6c5aaefababff9fca6978549",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
-    "pushed": false,
-    "pushed_at": "",
+    "last_seen_at": "2026-08-19T15:20:11.638282+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T15:20:11.638357+00:00",
     "source": "arXiv",
     "title": "KV-Pipe: On the Relation Between KV Sharing and Pipeline Parallel Efficiency in LLMs",
     "url": "http://arxiv.org/abs/2608.15943v1"
@@ -542,27 +632,47 @@
   "6d4ec902c728a02128d0e9d0": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "6d4ec902c728a02128d0e9d0",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "OpenAI",
     "title": "Partnering with CodeAI to prepare the first AI generation",
     "url": "https://openai.com/index/partnering-with-codeai"
   },
+  "6fdeda90037d251e41555b16": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "6fdeda90037d251e41555b16",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Policy Iteration with Human Feedback: Bringing Post-Training RL to In-context Learning",
+    "url": "http://arxiv.org/abs/2608.16831v1"
+  },
   "7167a366360279f90323e3e2": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "7167a366360279f90323e3e2",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Lilian Weng",
     "title": "Adversarial Attacks on LLMs",
     "url": "https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm"
   },
+  "7323da3581d80c57f299bd09": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "7323da3581d80c57f299bd09",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "Ask HN: What's the endgame of the AI comments buried in every post?",
+    "url": "https://news.ycombinator.com/item?id=49362305"
+  },
   "74b7cfe17cd9d51443796bc3": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "74b7cfe17cd9d51443796bc3",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Simon Willison",
@@ -572,22 +682,42 @@
   "74d008a4ca9626bab29fc653": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "74d008a4ca9626bab29fc653",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
-    "pushed": false,
-    "pushed_at": "",
+    "last_seen_at": "2026-08-19T15:20:11.638282+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T15:20:11.638357+00:00",
     "source": "arXiv",
     "title": "Beyond Binary Priorities: Multi-Tier SLA Scheduling for Large Language Model Serving",
     "url": "http://arxiv.org/abs/2608.16336v1"
   },
+  "7744c970483df960a3410ebc": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "7744c970483df960a3410ebc",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "CardioState-JEPA: Delay-Aware Cross-Modal Learning of a Shared Cardiac Representation",
+    "url": "https://huggingface.co/papers/2608.12944"
+  },
   "79f38e749039b6531dfcbdda": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "79f38e749039b6531dfcbdda",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Simon Willison",
     "title": "Markdown SVG upgrades",
     "url": "https://simonwillison.net/2026/Aug/16/markdown-svg-upgrades"
+  },
+  "7aa546454dd56395acc3571f": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "7aa546454dd56395acc3571f",
+    "last_seen_at": "2026-08-19T15:20:11.638282+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T15:20:11.638357+00:00",
+    "source": "arXiv",
+    "title": "MM-BEV: Enhancing Timeliness by Computing Where and When it Matters",
+    "url": "http://arxiv.org/abs/2608.15437v1"
   },
   "7acdb20efaf2f5438f67ed2d": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
@@ -612,7 +742,7 @@
   "7d16f6d18397197e4155a015": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "7d16f6d18397197e4155a015",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Cloudflare",
@@ -622,7 +752,7 @@
   "80605906fea60f1ed8c1033b": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "80605906fea60f1ed8c1033b",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Simon Willison",
@@ -632,7 +762,7 @@
   "8131dbd19ba1761e993495ec": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "8131dbd19ba1761e993495ec",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "GitHub Search",
@@ -652,17 +782,27 @@
   "823fa8414275c4336449b338": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "823fa8414275c4336449b338",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Lilian Weng",
     "title": "Thinking about High-Quality Human Data",
     "url": "https://lilianweng.github.io/posts/2024-02-05-human-data-quality"
   },
+  "834cac60d0f45898dcb75923": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "834cac60d0f45898dcb75923",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "Show HN: Building a full agentic harness around a 4B model is hard",
+    "url": "https://orvena.app/"
+  },
   "8393c843a171d72369b2dfab": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "8393c843a171d72369b2dfab",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "OpenAI",
@@ -672,12 +812,32 @@
   "839a552b00636472cd17b4a6": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "839a552b00636472cd17b4a6",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Netflix Tech Blog",
     "title": "In-House LLM Serving at Netflix",
     "url": "https://netflixtechblog.com/in-house-llm-serving-at-netflix-a5a8e799ea2c"
+  },
+  "8478d07b88e300ad0663740b": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "8478d07b88e300ad0663740b",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "AI Agents that are Portable",
+    "url": "https://nexusrun.dev/"
+  },
+  "84bfec01f3710f98bd2486ab": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "84bfec01f3710f98bd2486ab",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Palmyra x6 Technical Report: An Agentic, Tool-Use Model Post-Trained via Anchored Supervised Fine-Tuning",
+    "url": "http://arxiv.org/abs/2608.16620v2"
   },
   "86795577504c7e670336bed7": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
@@ -692,7 +852,7 @@
   "8961949ff68916c066c183eb": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "8961949ff68916c066c183eb",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Simon Willison",
@@ -719,10 +879,20 @@
     "title": "Breaking the Apple–Siri DMA Deadlock Without Sacrificing Privacy or Security",
     "url": "https://datatracker.ietf.org/doc/draft-das-execution-finality-ai-interoperability"
   },
+  "8ce148a5fc4311f233b3fc03": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "8ce148a5fc4311f233b3fc03",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "SkillEffect: Checked Lowering for Memory-Bounded Agent Tools",
+    "url": "http://arxiv.org/abs/2608.17007v1"
+  },
   "90732607d4ed49a19f90b8df": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "90732607d4ed49a19f90b8df",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "HuggingFace Papers",
@@ -732,7 +902,7 @@
   "93544bde158e1490c12f0dd4": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "93544bde158e1490c12f0dd4",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Lilian Weng",
@@ -742,7 +912,7 @@
   "94ed6d62a2d90355e2cc126a": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "94ed6d62a2d90355e2cc126a",
-    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": true,
     "pushed_at": "2026-08-19T11:59:48.796522+00:00",
     "source": "arXiv",
@@ -752,7 +922,7 @@
   "9643aa56c4cb854de8b61514": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "9643aa56c4cb854de8b61514",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "GitHub Search",
@@ -762,7 +932,7 @@
   "9bc2fea669f83e1e583ae257": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "9bc2fea669f83e1e583ae257",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Cloudflare",
@@ -772,7 +942,7 @@
   "9c25f4ae7a186d68926fabf7": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "9c25f4ae7a186d68926fabf7",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "OpenAI",
@@ -792,7 +962,7 @@
   "a419ee663be2b2df75bf0559": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "a419ee663be2b2df75bf0559",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "arXiv",
@@ -802,7 +972,7 @@
   "a52e9d71e445a46231be182c": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "a52e9d71e445a46231be182c",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Anthropic",
@@ -812,17 +982,27 @@
   "a620bde9ffd4ec571470433f": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "a620bde9ffd4ec571470433f",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Lilian Weng",
     "title": "Extrinsic Hallucinations in LLMs",
     "url": "https://lilianweng.github.io/posts/2024-07-07-hallucination"
   },
+  "a6654f02589b2983a43b85e9": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "a6654f02589b2983a43b85e9",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics",
+    "url": "http://arxiv.org/abs/2608.16370v1"
+  },
   "a6ba1fa198351c30060838d4": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "a6ba1fa198351c30060838d4",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Simon Willison",
@@ -832,7 +1012,7 @@
   "ab70204cacdfd6028c2c6c28": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "ab70204cacdfd6028c2c6c28",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "HuggingFace Papers",
@@ -842,7 +1022,7 @@
   "ad55208f067fb11b6a511110": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "ad55208f067fb11b6a511110",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Anthropic",
@@ -879,10 +1059,20 @@
     "title": "microsoft/agent-framework (12914★)",
     "url": "https://github.com/microsoft/agent-framework"
   },
+  "b9bd52101d0d3d987d0d9338": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "b9bd52101d0d3d987d0d9338",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "When Agents Act on Web3: An Attack-Surface Survey of MCP, Skills, and Tool Calling",
+    "url": "http://arxiv.org/abs/2608.17275v1"
+  },
   "baf07daff59f271b90795fd5": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "baf07daff59f271b90795fd5",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "OpenAI",
@@ -902,11 +1092,11 @@
   "c21c34f5075aa224ef725193": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "c21c34f5075aa224ef725193",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "GitHub Search",
-    "title": "sktime/sktime (9946★)",
+    "title": "sktime/sktime (9948★)",
     "url": "https://github.com/sktime/sktime"
   },
   "c24965ad067f0b5ded265b81": {
@@ -922,7 +1112,7 @@
   "c3b0ed374d41680783fa20fc": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "c3b0ed374d41680783fa20fc",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "OpenAI",
@@ -932,7 +1122,7 @@
   "c81353905109f68e8c7c3645": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "c81353905109f68e8c7c3645",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Netflix Tech Blog",
@@ -942,7 +1132,7 @@
   "c9a84293696c51a4bd2f8806": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "c9a84293696c51a4bd2f8806",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Netflix Tech Blog",
@@ -952,7 +1142,7 @@
   "c9e7574f58cebba180a66540": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "c9e7574f58cebba180a66540",
-    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": true,
     "pushed_at": "2026-08-19T11:59:48.796522+00:00",
     "source": "arXiv",
@@ -972,7 +1162,7 @@
   "cc512ee9f9f07ae273ba6538": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "cc512ee9f9f07ae273ba6538",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Netflix Tech Blog",
@@ -982,12 +1172,22 @@
   "cdd8d819f4855db7d80d6e91": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "cdd8d819f4855db7d80d6e91",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Anthropic",
     "title": "Improving Fable 5 S Biology Safeguards",
     "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards"
+  },
+  "cec159e593b6ac53792a13ba": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "cec159e593b6ac53792a13ba",
+    "last_seen_at": "2026-08-19T15:20:11.638282+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T15:20:11.638357+00:00",
+    "source": "arXiv",
+    "title": "On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification",
+    "url": "http://arxiv.org/abs/2608.18066v1"
   },
   "d04b3a384fab85a5931abb75": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
@@ -1002,9 +1202,9 @@
   "d1200519beb92e885adda6b4": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "d1200519beb92e885adda6b4",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
-    "pushed": false,
-    "pushed_at": "",
+    "last_seen_at": "2026-08-19T15:20:11.638282+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T15:20:11.638357+00:00",
     "source": "HuggingFace Papers",
     "title": "Demystifying Agent Skills: Why They Work-Until They Don't",
     "url": "https://huggingface.co/papers/2608.14036"
@@ -1042,7 +1242,7 @@
   "d5e7959aa0306d0c634336a2": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "d5e7959aa0306d0c634336a2",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Cloudflare",
@@ -1052,7 +1252,7 @@
   "d6015945733756164c791c28": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "d6015945733756164c791c28",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Lilian Weng",
@@ -1072,7 +1272,7 @@
   "d8ee545a09ddd0156af727f8": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "d8ee545a09ddd0156af727f8",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "GitHub Search",
@@ -1122,7 +1322,7 @@
   "df6247db840a99f65ea3d7e7": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "df6247db840a99f65ea3d7e7",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Cloudflare",
@@ -1132,7 +1332,7 @@
   "e29dc7792af98c7f9cadeedc": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "e29dc7792af98c7f9cadeedc",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "arXiv",
@@ -1142,7 +1342,7 @@
   "e59e91879b325c7b98284fe8": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "e59e91879b325c7b98284fe8",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Cloudflare",
@@ -1152,7 +1352,7 @@
   "e68246067eeddf6e1d69054b": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "e68246067eeddf6e1d69054b",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Anthropic",
@@ -1172,7 +1372,7 @@
   "e94be2229d16f02cdd2fd884": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "e94be2229d16f02cdd2fd884",
-    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": true,
     "pushed_at": "2026-08-19T11:59:48.796522+00:00",
     "source": "arXiv",
@@ -1182,7 +1382,7 @@
   "ec60b400b8fb3b22186b22e3": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "ec60b400b8fb3b22186b22e3",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "arXiv",
@@ -1202,7 +1402,7 @@
   "ef58f97dfcc78b1385811574": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "ef58f97dfcc78b1385811574",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "GitHub Search",
@@ -1212,7 +1412,7 @@
   "f0aa91974e0ad6ca58685787": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "f0aa91974e0ad6ca58685787",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "OpenAI",
@@ -1232,7 +1432,7 @@
   "f2323421e5e51bb84aa70424": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "f2323421e5e51bb84aa70424",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Anthropic",
@@ -1242,7 +1442,7 @@
   "f3d7b89cf654e34d7b3c039d": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "f3d7b89cf654e34d7b3c039d",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Cloudflare",
@@ -1259,10 +1459,20 @@
     "title": "The AI storage pitch is a load balancing problem",
     "url": "https://dev.profullstack.com/~anthony/blog/023-post.html"
   },
+  "f59cd210672752bead2b1760": {
+    "first_seen_at": "2026-08-19T15:17:42.608449+00:00",
+    "id": "f59cd210672752bead2b1760",
+    "last_seen_at": "2026-08-19T15:20:11.638282+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T15:20:11.638357+00:00",
+    "source": "arXiv",
+    "title": "FlashQuant: Sparse-Dense Fusion for Memory-Efficient Outlier-Aware LLM Inference",
+    "url": "http://arxiv.org/abs/2608.15531v1"
+  },
   "f87e14ef06b6e708ed2ec4dc": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "f87e14ef06b6e708ed2ec4dc",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Anthropic",
@@ -1272,7 +1482,7 @@
   "f954d86e102f2f9321c15cd2": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "f954d86e102f2f9321c15cd2",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Cloudflare",
@@ -1282,7 +1492,7 @@
   "fe274f3d2b37bb63a639f90d": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "fe274f3d2b37bb63a639f90d",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "arXiv",
@@ -1292,7 +1502,7 @@
   "ffc229d83891918f82064b92": {
     "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
     "id": "ffc229d83891918f82064b92",
-    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "last_seen_at": "2026-08-19T15:17:42.608449+00:00",
     "pushed": false,
     "pushed_at": "",
     "source": "Anthropic",
