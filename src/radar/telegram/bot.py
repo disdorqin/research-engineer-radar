@@ -10,7 +10,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 from radar.config import load_config
-from radar.query.planner import plan_query
+from radar.query.planner import QueryPlan, plan_query
 from radar.research.provenance import relation_label
 from radar.research.search import ResearchResult, SourceNode, research
 
@@ -22,9 +22,11 @@ START_TEXT = """🔎 Research Navigator V1.0
 • Agent Skills 为什么突然变热？帮我找源头，再顺着论文、代码和作者讨论往下找。
 • 找 GPU utilization 的工程文章，不要浅教程。
 • 最近一周 OpenAI / Anthropic 在 Agent 设计上有什么新东西？
+• 最近最火的 AI 工程新闻是什么？
 • 深挖第 2 条。
 • 把第 3 条追到源头。
 • 只看论文和代码。
+• 扩大范围重新搜。
 • 这个链接继续往下挖：https://...
 
 我会先把自然语言拆成 Topic / Intent / 时间范围 / 关键词 / 子查询 / 平台 / 一手来源偏好，再进行多源检索和来源链探索。"""
@@ -40,7 +42,12 @@ def _request_json(url: str, payload: dict | None = None, timeout: int = 30) -> d
     if payload is None:
         request = Request(url, headers={"User-Agent": "research-navigator/1.0"})
     else:
-        request = Request(url, data=urlencode(payload).encode("utf-8"), headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": "research-navigator/1.0"}, method="POST")
+        request = Request(
+            url,
+            data=urlencode(payload).encode("utf-8"),
+            headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": "research-navigator/1.0"},
+            method="POST",
+        )
     with urlopen(request, timeout=timeout) as response:
         return json.loads(response.read().decode("utf-8"))
 
@@ -135,12 +142,21 @@ def _chain(node: SourceNode, result: ResearchResult) -> str:
     return chain
 
 
-def render_search_result(result: ResearchResult, max_items: int = 6) -> str:
+def render_search_result(result: ResearchResult, max_items: int = 6, note: str = "") -> str:
     plan = result.plan
     lines = [f"🔎 {plan.topic}", f"{_intent_label(plan.intent)} · 最近 {plan.timeframe_days} 天" + (" · 优先一手" if plan.primary_only else "") + (f" · 深度 {plan.depth}" if plan.depth > 1 else ""), ""]
+    if note:
+        lines.append(note)
+        lines.append("")
     visible = result.nodes[:max_items]
     if not visible:
-        lines.append("这次没有找到足够可靠的结果。可以扩大时间范围，或换一种表达。")
+        if result.trace:
+            providers = result.trace.provider_counts or {}
+            provider_text = " · ".join(f"{k}={v}" for k, v in providers.items()) or "none"
+            lines.append(f"这次仍然没有找到足够可靠的结果。已尝试来源：{provider_text}。")
+        else:
+            lines.append("这次仍然没有找到足够可靠的结果。")
+        lines.append("你可以直接换成更具体的问题，例如：最近 Agent Skills 的论文和代码 / 最近 OpenAI Anthropic Agent 工程更新 / 最近最火 AI agent 新闻。")
         return "\n".join(lines)
     for idx, node in enumerate(visible, start=1):
         lines.append(f"{idx}. {_badge(node)} {node.title}")
@@ -175,6 +191,54 @@ def _trace_text(chat: dict) -> str:
     providers = trace.get("provider_counts") or {}
     provider_text = " · ".join(f"{k}={v}" for k, v in providers.items()) or "none"
     return f"🧪 Trace {trace.get('trace_id', '-')}\n耗时：{trace.get('duration_ms', 0)} ms\n节点：{trace.get('nodes', 0)} · 关系：{trace.get('edges', 0)} · 深挖页面：{trace.get('crawl_fetches', 0)}\n来源：{provider_text}\nwarnings：{len(trace.get('warnings') or [])}"
+
+
+def _needs_broaden(text: str) -> bool:
+    return any(token in text for token in ["扩大", "放宽", "上调", "换一个", "换成", "最火", "热点", "热门", "新闻", "前沿"])
+
+
+def _make_broadened_plan(plan: QueryPlan, clean: str) -> QueryPlan:
+    topic = plan.topic
+    lowered = clean.lower()
+    agentish = any(token in lowered for token in ["agent", "skills", "智能体", "代理"])
+    if any(token in clean for token in ["最火", "热点", "热门", "新闻", "前沿"]):
+        topic = "AI Agent / LLM 工程热点与一手动态"
+    elif agentish:
+        topic = "AI Agent / Agent Skills 最新一手来源与工程讨论"
+
+    if agentish:
+        queries = [
+            "agent skills agent evaluation source code paper",
+            "AI agent skills reliability evaluation GitHub arXiv",
+            "OpenAI Anthropic agent skills tool use memory evaluation",
+            "site:x.com agent skills AI agents evaluation",
+            "Hacker News AI agents agent skills evaluation",
+        ]
+        keywords = ["agent skills", "AI agents", "agent evaluation", "tool use", "memory", "reliability", "OpenAI", "Anthropic"]
+    else:
+        queries = [
+            "AI agents OpenAI Anthropic latest research engineering",
+            "LLM agents evaluation reliability tool use latest",
+            "AI engineering LLM serving agents Hacker News GitHub",
+            "site:x.com AI agents OpenAI Anthropic latest",
+            "latest AI research engineering agent infrastructure",
+        ]
+        keywords = ["AI agents", "LLM agents", "OpenAI", "Anthropic", "AI engineering", "LLM serving", "evaluation", "infrastructure"]
+
+    return QueryPlan(
+        original_query=plan.original_query,
+        topic=topic,
+        intent="hot" if any(token in clean for token in ["最火", "热点", "热门", "新闻", "前沿"]) else "deep_research",
+        timeframe_days=max(7, min(max(plan.timeframe_days, 30), 90)),
+        keywords=keywords,
+        queries=queries,
+        platforms=["web", "arxiv", "github", "hacker_news", "x", "youtube"],
+        primary_only=False,
+        depth=max(2, plan.depth),
+        must_include=[] if any(token in clean for token in ["最火", "热点", "热门", "新闻", "前沿"]) else plan.must_include,
+        exclude_terms=list(dict.fromkeys([*plan.exclude_terms, "beginner tutorial", "quickstart", "浅教程", "营销"])),
+        rationale="auto_broaden_after_empty_result",
+    )
 
 
 class TelegramResearchBot:
@@ -243,7 +307,7 @@ class TelegramResearchBot:
             return _trace_text(chat)
 
         effective_text = clean
-        continuation_tokens = ["继续", "深挖", "只看", "只要", "源头", "一手", "作者", "x", "youtube", "油管", "第", "换成", "追到"]
+        continuation_tokens = ["继续", "深挖", "只看", "只要", "源头", "一手", "作者", "youtube", "油管", "第", "换成", "换一个", "追到", "扩大", "放宽", "上调"]
         if chat.get("last_topic") and any(token in lowered for token in continuation_tokens):
             effective_text = f"围绕上一轮主题“{chat['last_topic']}”，用户继续要求：{clean}"
         history = self._history_for_planner(chat)
@@ -254,25 +318,46 @@ class TelegramResearchBot:
         if index is not None:
             last_results = chat.get("last_results", [])
             if index > len(last_results):
-                return f"上一轮只有 {len(last_results)} 条可继续探索的结果，没有第 {index} 条。"
-            seed_url = last_results[index - 1].get("url")
-            plan.depth = max(plan.depth, 2)
-            if plan.intent in {"general_search", "latest", "hot"}:
-                plan.intent = "deep_research"
+                if not last_results and chat.get("last_query"):
+                    effective_text = f"上一轮没有可深挖条目。请扩大范围重新检索上一轮问题：{chat['last_query']}。用户继续要求：{clean}"
+                    plan = plan_query(effective_text, self.config, history=history)
+                    seed_url = None
+                else:
+                    return f"上一轮只有 {len(last_results)} 条可继续探索的结果，没有第 {index} 条。你可以说“扩大范围重新搜”。"
+            else:
+                seed_url = last_results[index - 1].get("url")
+                plan.depth = max(plan.depth, 2)
+                if plan.intent in {"general_search", "latest", "hot"}:
+                    plan.intent = "deep_research"
         elif seed_url:
             plan.depth = max(plan.depth, 2)
             if plan.intent == "general_search":
                 plan.intent = "deep_research"
 
         result = research(plan, self.config, seed_url=seed_url)
+        note = ""
+        if not result.nodes and seed_url is None:
+            broadened = _make_broadened_plan(plan, clean if not chat.get("last_query") else f"{clean} {chat.get('last_query')}")
+            result = research(broadened, self.config, seed_url=None)
+            plan = broadened
+            note = "第一次检索没有可用结果，我已经自动放宽关键词、扩大时间范围，并取消过强的一手来源限制。"
+        elif _needs_broaden(clean) and seed_url is None and len(result.nodes) < 3:
+            broadened = _make_broadened_plan(plan, clean)
+            broadened.depth = max(broadened.depth, 2)
+            second = research(broadened, self.config, seed_url=None)
+            if len(second.nodes) > len(result.nodes):
+                result = second
+                plan = broadened
+                note = "我按你的意思把检索范围上调了：关键词更宽、平台更多、时间窗口更大。"
+
         visible = result.nodes[:10]
         chat["last_results"] = [{"title": node.title, "url": node.url, "source": node.source, "kind": node.kind} for node in visible]
         chat["last_topic"] = plan.topic
         chat["last_query"] = clean
         chat["last_trace"] = result.trace.to_dict() if result.trace else {}
-        chat["history"] = (chat.get("history", []) + [{"role": "user", "content": clean}, {"role": "assistant", "content": f"已检索主题：{plan.topic}"}])[-10:]
+        chat["history"] = (chat.get("history", []) + [{"role": "user", "content": clean}, {"role": "assistant", "content": f"已检索主题：{plan.topic}，结果数：{len(visible)}"}])[-10:]
         self.save_state()
-        return render_search_result(result, max_items=int(self.config.get("interactive_search", {}).get("telegram_max_items", 6)))
+        return render_search_result(result, max_items=int(self.config.get("interactive_search", {}).get("telegram_max_items", 6)), note=note)
 
     def process_update(self, update: dict) -> None:
         message = update.get("message") or update.get("edited_message") or {}
