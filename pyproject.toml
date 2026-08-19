@@ -12,6 +12,7 @@ dependencies = []
 
 [project.scripts]
 radar = "radar.main:main"
+radar-telegram = "radar.telegram.bot:main"
 radar-navigator = "radar.telegram.bot:main"
 radar-webhook = "radar.telegram.webhook:main"
 radar-eval = "radar.eval.benchmark:main"
