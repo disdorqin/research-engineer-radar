@@ -12,3 +12,5 @@ src/*.egg-info/
 reports/*.md
 !reports/.gitkeep
 data/seen.json
+data/telegram_sessions.json
+data/traces/
