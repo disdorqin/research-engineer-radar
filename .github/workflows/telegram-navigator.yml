@@ -1,0 +1,72 @@
+name: Telegram Research Navigator
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Keep a near-live long-poll window without requiring a separate server.
+    # Each run serves ~27 minutes; the next one starts every 30 minutes.
+    - cron: "*/30 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - "src/radar/query/**"
+      - "src/radar/research/**"
+      - "src/radar/telegram/**"
+      - ".github/workflows/telegram-navigator.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-research-navigator
+  cancel-in-progress: false
+
+jobs:
+  navigator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+      LLM_BASE_URL: ${{ vars.LLM_BASE_URL || 'https://apihub.agnes-ai.com/v1' }}
+      LLM_MODEL: ${{ vars.LLM_MODEL || 'agnes-2.5-flash' }}
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -e .
+
+      - name: Compile check
+        run: python -m compileall -q src
+
+      - name: Unit tests
+        if: github.event_name != 'schedule'
+        run: python -m unittest discover -s tests -v
+
+      - name: Serve Telegram research queries
+        run: python -m radar.telegram.bot --config config/radar.json --serve-seconds 1620
+
+      - name: Persist conversation session
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -f data/telegram_sessions.json ]; then
+            git add -f data/telegram_sessions.json
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: persist Telegram research session"
+              git pull --rebase origin "${GITHUB_REF_NAME}"
+              git push origin "HEAD:${GITHUB_REF_NAME}"
+            fi
+          fi
