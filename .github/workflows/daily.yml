@@ -1,16 +1,13 @@
-name: Research Engineer Radar Daily
+name: Legacy Radar Manual Run
 
 on:
   workflow_dispatch:
-  schedule:
-    # 08:30 Asia/Shanghai = 00:30 UTC
-    - cron: "30 0 * * *"
 
 permissions:
   contents: write
 
 concurrency:
-  group: research-engineer-radar-daily
+  group: research-engineer-radar-manual
   cancel-in-progress: false
 
 jobs:
@@ -60,13 +57,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # The radar run modifies tracked state/report files. Commit those changes
-          # before rebasing; `git pull --rebase` refuses a dirty working tree.
           git add -f data/seen.json reports/*.md
           if ! git diff --cached --quiet; then
             git commit -m "chore: update radar state and digest"
           fi
-
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
