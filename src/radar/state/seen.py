@@ -20,22 +20,47 @@ class SeenState:
         else:
             self.records = {}
 
+    def _id(self, item: RadarItem) -> str:
+        return item_id(item.title, item.url)
+
     def is_seen(self, item: RadarItem) -> bool:
-        return item_id(item.title, item.url) in self.records
+        return self._id(item) in self.records
+
+    def was_pushed(self, item: RadarItem) -> bool:
+        return bool(self.records.get(self._id(item), {}).get("pushed", False))
+
+    def observe(self, items: list[RadarItem]) -> None:
+        now = utc_now().isoformat()
+        for item in items:
+            key = self._id(item)
+            record = self.records.get(key)
+            if record is None:
+                self.records[key] = {
+                    "id": key,
+                    "title": item.title,
+                    "url": item.url,
+                    "source": item.source,
+                    "first_seen_at": now,
+                    "last_seen_at": now,
+                    "pushed": False,
+                    "pushed_at": "",
+                }
+            else:
+                record["last_seen_at"] = now
+                record["title"] = item.title
+                record["url"] = item.url
+                record["source"] = item.source
 
     def filter_new(self, items: list[RadarItem]) -> list[RadarItem]:
         return [item for item in items if not self.is_seen(item)]
 
     def mark_pushed(self, items: list[RadarItem]) -> None:
+        self.observe(items)
         now = utc_now().isoformat()
         for item in items:
-            self.records[item_id(item.title, item.url)] = {
-                "title": item.title,
-                "url": item.url,
-                "source": item.source,
-                "first_seen_at": now,
-                "pushed": True,
-            }
+            record = self.records[self._id(item)]
+            record["pushed"] = True
+            record["pushed_at"] = now
 
     def save(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)

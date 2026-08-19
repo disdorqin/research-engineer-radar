@@ -1,69 +1,124 @@
 # Research Engineer Radar
 
-Research Engineer Radar 是一个面向 **AI Research Engineer / AI 科研工程师** 成长方向的每日情报机器人。它不是 Hot 100 新闻聚合器，也不是简单论文推送，而是把少量高价值工程与科研信息筛出来，帮助使用者逐步形成技术判断力。
+Research Engineer Radar 是面向 **AI Research Engineer / AI 科研工程师** 成长方向的每日情报雷达。
 
-核心目标：
+它不是 Hot 100 新闻聚合器，也不是“抓得越多越好”的新闻机器人。核心目标是：从大量候选中筛出每天真正值得投入时间的 5-10 条内容，并说明它为什么值得看、对能力树有什么帮助、对当前项目有什么迁移价值，以及下一步应该精读、浏览、收藏还是动手实验。
 
-> 降低高价值工程与科研信息的发现成本，让每天真正值得看的内容变少、变准、变可行动。
-
-## v0.1 范围
-
-- 多来源采集：RSS/Atom、GitHub Search、arXiv Atom API。
-- 标准化与去重：统一为 `RadarItem`，用 URL / 标题 hash 记录 `data/seen.json`。
-- 便宜的确定性排序：先用 metadata、关键词、来源优先级、topic 权重、hype penalty 做粗排。
-- shortlist 后再可选 LLM 分析：只把少量候选交给 LLM，降低成本、延迟和随机性。
-- Digest 输出：Markdown 日报，Top 5-10，包含“这是什么 / 为什么值得看 / 关系 / 建议动作”。
-- Publisher 可插拔：Telegram 首选，WeCom 预留。
-- GitHub Actions：支持 `workflow_dispatch` 和 Asia/Shanghai 每日定时运行。
-
-不做：数据库、向量库、Kubernetes、多 Agent 大系统、一次抓 100 条然后全丢给 LLM。
-
-## 目录结构
+## 当前 pipeline
 
 ```text
-src/radar/
-├── collectors/      # RSS/Atom、GitHub、arXiv
-├── processing/      # URL 规范化、去重辅助
-├── ranking/         # 确定性 ranking
-├── digest/          # Markdown digest
-├── publishers/      # Telegram / WeCom
-├── state/           # seen.json 状态
-└── main.py          # pipeline 编排
+Sources
+  ↓
+Collectors
+  ↓
+CollectorResult / Source Health
+  ↓
+Normalize + in-batch deduplicate
+  ↓
+State (seen != pushed)
+  ↓
+Deterministic ranking
+  ↓
+Source-balanced candidate pool
+  ↓
+Shortlist enrichment
+  ↓
+Optional LLM personal analysis
+  ↓
+Final ranking + final source balance
+  ↓
+Top 5-10 digest
+  ↓
+Telegram
+  ↓
+State + report persist
 ```
 
-## 本地运行
+## 当前能力
+
+- RSS / Atom：OpenAI、Netflix Tech Blog、Cloudflare、Simon Willison、Lilian Weng。
+- Sitemap：Anthropic 官方站点。
+- GitHub Search：动态 `lookback_days` 生成 `pushed:>{since}`，不写死日期。
+- arXiv：ML systems、serving、time-series、concept drift 等查询。
+- HuggingFace Papers：使用公开 API，替代会 401 的 RSS。
+- Hacker News：通过 Algolia 低成本抓社区信号，避免官方 topstories N+1 慢抓。
+- Source Health：Collector 失败进入运行统计，不生成假候选。
+- Ranking：topic alignment、engineering value、source quality、freshness、actionability、project transferability、GitHub signal、hype penalty、old popular repo penalty。
+- Shortlist enrichment：只 enrich shortlist，不对所有候选抓全文。
+- LLM：OpenAI-compatible，默认面向 Agnes；无 key 时确定性 fallback。
+- Telegram：自动分块、压缩手机版摘要、重试、HTTP 状态检查。
+- GitHub Actions：workflow_dispatch + 每天 08:30 Asia/Shanghai 定时运行。
+
+## 运行
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+.venv\Scripts\activate
 pip install -e .
 python -m radar.main --config config/radar.json --dry-run
 ```
 
-## 测试
+如果本机曾经安装过旧的 editable 包，建议测试时显式指定：
 
 ```bash
-python -m unittest discover -s tests -v
+PYTHONPATH=src python -m unittest discover -s tests -v
+PYTHONPATH=src python -m radar.main --config config/radar.json --dry-run
 ```
 
-## GitHub Secrets
+## LLM 检查
 
-不要把真实 Token 写进代码、`.env` 或聊天。仓库需要配置：
+```bash
+PYTHONPATH=src python -m radar.main --config config/radar.json --check-llm
+```
+
+需要环境变量：
 
 ```text
+LLM_API_KEY
+LLM_BASE_URL=https://apihub.agnes-ai.com/v1
+LLM_MODEL=agnes-2.5-flash
+```
+
+## GitHub Secrets / Variables
+
+Secrets：
+
+```text
+LLM_API_KEY
 TELEGRAM_BOT_TOKEN
 TELEGRAM_CHAT_ID
-LLM_API_KEY          # 可选
-WECOM_WEBHOOK_URL   # 可选
+SEMANTIC_SCHOLAR_KEY  # optional, reserved
 ```
 
-可选 Variables：
+Variables：
 
 ```text
-LLM_BASE_URL
-LLM_MODEL
+LLM_BASE_URL=https://apihub.agnes-ai.com/v1
+LLM_MODEL=agnes-2.5-flash
 ```
 
-## 设计原则
+GitHub API 使用 Actions 自带的 `${{ github.token }}`，不需要额外 PAT。
 
-这个系统真正优化的不是每天抓多少新闻，而是每天让使用者以更低成本接触少量真正值得看的工程和科研信息，并逐渐形成自己的判断力。
+## Telegram Bot 设置
+
+1. 在 Telegram 找 `@BotFather`。
+2. `/newbot` 创建 Bot。
+3. 复制 Bot Token 到 GitHub Secret：`TELEGRAM_BOT_TOKEN`。
+4. 给 Bot 发一条消息，或把 Bot 拉进目标群。
+5. 获取 chat id 后配置 GitHub Secret：`TELEGRAM_CHAT_ID`。
+6. 先运行小测试，再开启完整日报。
+
+不要把真实 Token 写进源码、配置、日志或聊天。
+
+## 文档
+
+- `docs/ARCHITECTURE.md`：架构说明。
+- `docs/GAP_ANALYSIS.md`：差距分析。
+- `docs/PROJECT_MEMORY.md`：跨对话开发记忆。
+- `THIRD_PARTY_NOTICES.md`：参考项目与 License 记录。
+
+## 项目边界
+
+第一阶段不做 PostgreSQL、Vector DB、Kubernetes、多 Agent、RAG、Web App、移动 App。所有工作先服务于一个指标：
+
+> 每天最后留下来的 5-10 条，我是否真的愿意花时间看。

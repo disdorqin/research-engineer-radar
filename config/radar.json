@@ -1,63 +1,256 @@
 {
   "timezone": "Asia/Shanghai",
   "max_candidates": 80,
-  "shortlist_size": 12,
+  "shortlist_size": 16,
   "top_n": 8,
   "state_path": "data/seen.json",
+  "feedback_path": "data/feedback.jsonl",
   "report_dir": "reports",
   "topic_weights": {
-    "engineering_systems": 0.60,
+    "engineering_systems": 0.6,
     "github_ai_infra": 0.25,
     "paper_research": 0.15
   },
+  "user_profile": {
+    "target_role": "AI Research Engineer",
+    "focus": [
+      "AI Systems",
+      "ML Systems",
+      "Training / Inference",
+      "Performance Profiling",
+      "CPU / GPU / I/O",
+      "Data Pipeline",
+      "Experiment Infrastructure",
+      "Evaluation",
+      "MLOps",
+      "AI Infrastructure",
+      "Agent Engineering",
+      "Research Engineering",
+      "Time Series Forecasting",
+      "Electricity Forecasting"
+    ],
+    "current_projects": [
+      "electricity price forecasting",
+      "model ensemble and switching",
+      "spike prediction",
+      "online learning",
+      "concept drift",
+      "CPU/GPU parallelism",
+      "feature cache",
+      "prediction cache",
+      "experiment efficiency"
+    ],
+    "downrank": [
+      "pure marketing",
+      "generic AI news without engineering detail",
+      "model release with no evaluation or deployment signal",
+      "hardware-only low-level design unrelated to ML systems",
+      "unrelated theory paper"
+    ]
+  },
   "keywords": {
-    "engineering_systems": ["ai systems", "ml systems", "profiling", "performance", "optimization", "inference", "training", "serving", "observability", "data pipeline", "evaluation", "experiment", "mlops", "gpu", "cpu", "io"],
-    "github_ai_infra": ["agent", "workflow", "framework", "tooling", "open source", "github", "mlflow", "dvc", "hugging face", "weights & biases", "infrastructure"],
-    "paper_research": ["arxiv", "paper", "benchmark", "sota", "time series", "electricity forecasting", "forecasting", "research"]
+    "engineering_systems": [
+      "ai systems",
+      "ml systems",
+      "profiling",
+      "performance",
+      "optimization",
+      "inference",
+      "training",
+      "serving",
+      "observability",
+      "data pipeline",
+      "evaluation",
+      "experiment",
+      "mlops",
+      "gpu",
+      "cpu",
+      "io",
+      "latency",
+      "throughput",
+      "benchmark",
+      "scheduler",
+      "cache"
+    ],
+    "github_ai_infra": [
+      "agent",
+      "workflow",
+      "framework",
+      "tooling",
+      "open source",
+      "github",
+      "mlflow",
+      "dvc",
+      "hugging face",
+      "weights & biases",
+      "infrastructure",
+      "orchestration",
+      "observability",
+      "vllm",
+      "triton"
+    ],
+    "paper_research": [
+      "arxiv",
+      "paper",
+      "benchmark",
+      "sota",
+      "time series",
+      "electricity forecasting",
+      "forecasting",
+      "research",
+      "concept drift",
+      "online learning"
+    ]
+  },
+  "engineering_terms": [
+    "profiling",
+    "benchmark",
+    "latency",
+    "throughput",
+    "memory",
+    "gpu",
+    "cpu",
+    "io",
+    "cache",
+    "pipeline",
+    "serving",
+    "inference",
+    "training",
+    "evaluation",
+    "observability",
+    "reliability",
+    "scheduler",
+    "distributed"
+  ],
+  "action_terms": [
+    "code",
+    "github",
+    "open source",
+    "tutorial",
+    "benchmark",
+    "recipe",
+    "implementation",
+    "tool",
+    "framework",
+    "library",
+    "released",
+    "release",
+    "dataset",
+    "repo"
+  ],
+  "project_transfer_terms": [
+    "time series",
+    "forecasting",
+    "electricity",
+    "concept drift",
+    "online learning",
+    "ensemble",
+    "spike",
+    "data pipeline",
+    "evaluation",
+    "cache",
+    "profiling",
+    "experiment"
+  ],
+  "ranking_weights": {
+    "topic_alignment": 0.28,
+    "engineering_value": 0.2,
+    "source_quality": 0.14,
+    "freshness": 0.1,
+    "actionability": 0.12,
+    "project_transferability": 0.1,
+    "github_signal": 0.06,
+    "hype_penalty": 0.12
+  },
+  "source_balance": {
+    "enabled": true,
+    "soft_quota": 7,
+    "min_score_keep": 0.68
+  },
+  "final_source_balance": {
+    "enabled": true,
+    "soft_quota": 4,
+    "min_score_keep": 0.82
   },
   "source_priority": {
-    "OpenAI": 1.00,
+    "OpenAI": 1.0,
     "Anthropic": 0.96,
     "Google Research": 0.94,
-    "Netflix Tech Blog": 0.90,
-    "Uber Engineering": 0.90,
-    "Meta Engineering": 0.90,
+    "Google Engineering": 0.94,
+    "Netflix Tech Blog": 0.9,
+    "Uber Engineering": 0.9,
+    "Meta Engineering": 0.9,
     "Cloudflare": 0.88,
     "Databricks": 0.88,
-    "NVIDIA": 0.90,
+    "NVIDIA": 0.9,
     "Simon Willison": 0.88,
-    "Lilian Weng": 0.90,
-    "GitHub Search": 0.78,
+    "Lilian Weng": 0.9,
+    "HuggingFace Papers": 0.82,
+    "Hacker News": 0.76,
+    "GitHub Search": 0.74,
     "arXiv": 0.72
   },
-  "hype_terms": ["revolutionary", "game changer", "10x", "magic", "killer", "震撼", "颠覆"],
-  "rss_sources": [
-    {"name": "OpenAI", "url": "https://openai.com/news/rss.xml"},
-    {"name": "Anthropic", "url": "https://www.anthropic.com/news/rss.xml"},
-    {"name": "Netflix Tech Blog", "url": "https://netflixtechblog.com/feed"},
-    {"name": "Uber Engineering", "url": "https://www.uber.com/blog/engineering/rss/"},
-    {"name": "Cloudflare", "url": "https://blog.cloudflare.com/tag/ai/rss/"},
-    {"name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/"},
-    {"name": "Lilian Weng", "url": "https://lilianweng.github.io/index.xml"}
+  "hype_terms": [
+    "revolutionary",
+    "game changer",
+    "10x",
+    "magic",
+    "killer",
+    "震撼",
+    "颠覆",
+    "秒杀",
+    "史诗级"
   ],
+  "rss_sources": [
+    {"name": "OpenAI", "url": "https://openai.com/news/rss.xml", "limit": 10},
+    {"name": "Netflix Tech Blog", "url": "https://netflixtechblog.com/feed", "limit": 10},
+    {"name": "Cloudflare", "url": "https://blog.cloudflare.com/tag/ai/rss/", "limit": 10},
+    {"name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "limit": 10},
+    {"name": "Lilian Weng", "url": "https://lilianweng.github.io/index.xml", "limit": 10}
+  ],
+  "huggingface_papers": {
+    "enabled": true,
+    "limit": 10
+  },
+  "sitemap_sources": [
+    {"name": "Anthropic", "url": "https://www.anthropic.com/sitemap.xml", "include_patterns": ["/news/", "/research/", "/engineering/"], "limit": 8}
+  ],
+  "github_lookback_days": 30,
   "github_queries": [
-    "ml systems stars:>300 pushed:>2026-01-01",
-    "agent framework stars:>500 pushed:>2026-01-01",
-    "inference serving llm stars:>300 pushed:>2026-01-01",
-    "time series forecasting stars:>200 pushed:>2026-01-01"
+    {"query": "ml systems stars:>300", "lookback_days": 30, "limit": 8},
+    {"query": "agent framework stars:>500", "lookback_days": 30, "limit": 8},
+    {"query": "inference serving llm stars:>300", "lookback_days": 30, "limit": 8},
+    {"query": "time series forecasting stars:>200", "lookback_days": 45, "limit": 8},
+    {"query": "experiment tracking mlops stars:>200", "lookback_days": 45, "limit": 6}
   ],
   "arxiv_queries": [
-    "cat:cs.LG AND (\"ML systems\" OR \"model serving\" OR \"time series forecasting\")",
-    "cat:cs.DC AND (\"machine learning\" OR \"inference\" OR \"data pipeline\")"
+    {"query": "cat:cs.LG AND (\"ML systems\" OR \"model serving\" OR \"time series forecasting\")", "limit": 8},
+    {"query": "cat:cs.DC AND (\"machine learning\" OR \"inference\" OR \"data pipeline\")", "limit": 8},
+    {"query": "cat:cs.LG AND (\"concept drift\" OR \"online learning\" OR \"electricity forecasting\")", "limit": 6}
   ],
+  "hacker_news": {
+    "enabled": true,
+    "lookback_days": 7,
+    "per_query": 4,
+    "limit": 8,
+    "queries": ["AI", "LLM", "inference", "machine learning"]
+  },
+  "enrichment": {
+    "enabled": true,
+    "max_chars": 4500
+  },
   "publishers": {
-    "telegram": {"enabled": true},
-    "wecom": {"enabled": false}
+    "telegram": {"enabled": true}
   },
   "llm": {
-    "enabled": false,
+    "enabled": true,
     "base_url_env": "LLM_BASE_URL",
     "api_key_env": "LLM_API_KEY",
-    "model_env": "LLM_MODEL"
+    "model_env": "LLM_MODEL",
+    "base_url": "https://apihub.agnes-ai.com/v1",
+    "model": "agnes-2.5-flash",
+    "deterministic_weight": 0.45,
+    "llm_weight": 0.55,
+    "timeout_seconds": 45
   }
 }

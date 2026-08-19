@@ -9,31 +9,42 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: research-engineer-radar-daily
+  cancel-in-progress: false
+
 jobs:
   radar:
     runs-on: ubuntu-latest
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      WECOM_WEBHOOK_URL: ${{ secrets.WECOM_WEBHOOK_URL }}
       LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-      LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
-      LLM_MODEL: ${{ vars.LLM_MODEL }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      LLM_BASE_URL: ${{ vars.LLM_BASE_URL || 'https://apihub.agnes-ai.com/v1' }}
+      LLM_MODEL: ${{ vars.LLM_MODEL || 'agnes-2.5-flash' }}
+      GITHUB_TOKEN: ${{ github.token }}
+      SEMANTIC_SCHOLAR_KEY: ${{ secrets.SEMANTIC_SCHOLAR_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
 
       - name: Install
         run: pip install -e .
 
-      - name: Test
+      - name: Unit tests
         run: python -m unittest discover -s tests -v
+
+      - name: LLM connectivity check
+        if: env.LLM_API_KEY != ''
+        run: python -m radar.main --config config/radar.json --check-llm
 
       - name: Run radar
         run: python -m radar.main --config config/radar.json
@@ -45,10 +56,11 @@ jobs:
           path: reports/*.md
           if-no-files-found: warn
 
-      - name: Persist seen state
+      - name: Persist state and report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/seen.json reports/*.md || true
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git add -f data/seen.json reports/*.md
           git diff --cached --quiet || git commit -m "chore: update radar state and digest"
           git push

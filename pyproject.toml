@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "research-engineer-radar"
-version = "0.1.0"
-description = "A lightweight daily radar for AI research engineering signals."
+version = "0.3.0"
+description = "A lightweight daily radar for AI research engineering signals with source health, ranking, enrichment, and Telegram delivery."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
