@@ -1,0 +1,1302 @@
+{
+  "0b3991fc3353c26d01499edc": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "0b3991fc3353c26d01499edc",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Hoeffding adaptive splitting trees for data stream classification with concept drift and ensemble learning",
+    "url": "http://arxiv.org/abs/2608.16659v1"
+  },
+  "0df31711a1a9e98c0ce38151": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "0df31711a1a9e98c0ce38151",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Lilian Weng",
+    "title": "Prompt Engineering",
+    "url": "https://lilianweng.github.io/posts/2023-03-15-prompt-engineering"
+  },
+  "0f743a48654d5a86797af473": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "0f743a48654d5a86797af473",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "AI automated hiring tools spark discrimination and secrecy lawsuits",
+    "url": "https://www.theguardian.com/technology/2026/aug/19/ai-hiring-tools-discrimination"
+  },
+  "1045ca752fe6fb5c77a64151": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "1045ca752fe6fb5c77a64151",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Netflix Tech Blog",
+    "title": "Data Projects: Managing Data Assets at Netflix Scale",
+    "url": "https://netflixtechblog.com/data-projects-managing-data-assets-at-netflix-scale-7ca25888591e"
+  },
+  "10dadad0d2f4e9e70c2e851b": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "10dadad0d2f4e9e70c2e851b",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Lilian Weng",
+    "title": "Why We Think",
+    "url": "https://lilianweng.github.io/posts/2025-05-01-thinking"
+  },
+  "1380f7766171a5a616fa9c57": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "1380f7766171a5a616fa9c57",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "The Defender’s Window",
+    "url": "https://openai.com/index/the-defenders-window"
+  },
+  "142952f1a3a0823fc4a1fd9e": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "142952f1a3a0823fc4a1fd9e",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Netflix Tech Blog",
+    "title": "Building Service Topology at Scale: Architecture, Challenges, and Lessons Learned",
+    "url": "https://netflixtechblog.com/building-service-topology-at-scale-architecture-challenges-and-lessons-learned-f4b792f3f0d8"
+  },
+  "1f36da4241f6bea9bbe264fc": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "1f36da4241f6bea9bbe264fc",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "sktime/pytorch-forecasting (4972★)",
+    "url": "https://github.com/sktime/pytorch-forecasting"
+  },
+  "209c9cf93fba015f97f6ee0b": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "209c9cf93fba015f97f6ee0b",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Lilian Weng",
+    "title": "Reward Hacking in Reinforcement Learning",
+    "url": "https://lilianweng.github.io/posts/2024-11-28-reward-hacking"
+  },
+  "22405ea1e27b33a112e59937": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "22405ea1e27b33a112e59937",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "OpenAI joins PORTS-Pike project",
+    "url": "https://openai.com/index/openai-joins-ports-pike-project"
+  },
+  "246181a248cc08ccc4c0e54c": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "246181a248cc08ccc4c0e54c",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "microsoft/finnts (266★)",
+    "url": "https://github.com/microsoft/finnts"
+  },
+  "24b655bece51c05de560d39d": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "24b655bece51c05de560d39d",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Netflix Tech Blog",
+    "title": "Toward More Controllable AI Video Editing: An Early Research Exploration at Netflix",
+    "url": "https://netflixtechblog.com/toward-more-controllable-ai-video-editing-an-early-research-exploration-at-netflix-eb8160ed60a2"
+  },
+  "25f97e26ea36c89ebde63f1a": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "25f97e26ea36c89ebde63f1a",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Cloudflare",
+    "title": "How Cloudflare detects MCP traffic and helps secure it",
+    "url": "https://blog.cloudflare.com/mcp-security-updates"
+  },
+  "265610dca0c538c602c3a9d3": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "265610dca0c538c602c3a9d3",
+    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T11:59:48.796522+00:00",
+    "source": "GitHub Search",
+    "title": "gpustack/gpustack (5520★)",
+    "url": "https://github.com/gpustack/gpustack"
+  },
+  "282279b12ba8a13cbdd27182": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "282279b12ba8a13cbdd27182",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "MoE-ViE: Mixture of Experts Vision Encoder for Efficient Image and Video Understanding",
+    "url": "https://huggingface.co/papers/2608.17402"
+  },
+  "29c2808ed90e37ce0c1304fe": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "29c2808ed90e37ce0c1304fe",
+    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T11:59:48.796522+00:00",
+    "source": "GitHub Search",
+    "title": "kvcache-ai/Mooncake (6318★)",
+    "url": "https://github.com/kvcache-ai/Mooncake"
+  },
+  "2bfcc2393a7285c23af674c7": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "2bfcc2393a7285c23af674c7",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Policy Optimization and Statistical Inference for Online Contextual Matrix Games",
+    "url": "http://arxiv.org/abs/2608.17173v1"
+  },
+  "2c589c3624db62180737f576": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "2c589c3624db62180737f576",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Lilian Weng",
+    "title": "Harness Engineering for Self-Improvement",
+    "url": "https://lilianweng.github.io/posts/2026-07-04-harness"
+  },
+  "2d3f8890a9148172f964d566": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "2d3f8890a9148172f964d566",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "V-RAE: Rethinking Video Latent Spaces for Generation",
+    "url": "https://huggingface.co/papers/2608.13556"
+  },
+  "2d41a766388710c15e3ea18d": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "2d41a766388710c15e3ea18d",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Communication Reduction via Semantic-Based Encoding in DMPC Using LSTMs",
+    "url": "http://arxiv.org/abs/2608.17592v1"
+  },
+  "2d6bfb1d4d7785102069474d": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "2d6bfb1d4d7785102069474d",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement",
+    "url": "https://huggingface.co/papers/2608.14221"
+  },
+  "30198853025f931c33e31ab2": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "30198853025f931c33e31ab2",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "AsyTO: Asymmetric Temporal Operator for Parameter-Efficient Multivariate Time Series Forecasting",
+    "url": "http://arxiv.org/abs/2608.16098v1"
+  },
+  "332a3b0abd8c280421907668": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "332a3b0abd8c280421907668",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing",
+    "url": "https://huggingface.co/papers/2608.18063"
+  },
+  "352628bb2eed49a9a691be7f": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "352628bb2eed49a9a691be7f",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "Kiln-AI/Kiln (5027★)",
+    "url": "https://github.com/Kiln-AI/Kiln"
+  },
+  "37ceed01304adeb4b44a7470": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "37ceed01304adeb4b44a7470",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "RiccardoBiosas/awesome-MLSecOps (452★)",
+    "url": "https://github.com/RiccardoBiosas/awesome-MLSecOps"
+  },
+  "3b81110dcd9b3a7b4bc1d0c2": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "3b81110dcd9b3a7b4bc1d0c2",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Simon Willison",
+    "title": "CORS Chat",
+    "url": "https://simonwillison.net/2026/Aug/15/cors-chat"
+  },
+  "3d3ca6aea5755318424269a9": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "3d3ca6aea5755318424269a9",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "DiSCO: Defending text-to-image generation through distribution-guided contrastive prompt optimization",
+    "url": "https://huggingface.co/papers/2608.17067"
+  },
+  "3fa812892533862b368a9b8d": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "3fa812892533862b368a9b8d",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Lilian Weng",
+    "title": "Diffusion Models for Video Generation",
+    "url": "https://lilianweng.github.io/posts/2024-04-12-diffusion-video"
+  },
+  "3ff02964da6b7f4fea83906b": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "3ff02964da6b7f4fea83906b",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "New policy ideas for the Intelligence Age",
+    "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age"
+  },
+  "4041d799912094e5d71195eb": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "4041d799912094e5d71195eb",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "DB-SpMSpV: Dual-View Blocked Sparse Matrix-Sparse Vector Multiplication for Dynamic GPU Workloads",
+    "url": "http://arxiv.org/abs/2608.16308v1"
+  },
+  "40f5467ebbabf387c83fc8e8": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "40f5467ebbabf387c83fc8e8",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Cloudflare",
+    "title": "Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers",
+    "url": "https://blog.cloudflare.com/kitesurf"
+  },
+  "4169b21920330f2d59332622": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "4169b21920330f2d59332622",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "elizaOS/eliza (19096★)",
+    "url": "https://github.com/elizaOS/eliza"
+  },
+  "4307222bc7e5f2e471152174": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "4307222bc7e5f2e471152174",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Anthropic",
+    "title": "Claude Sonnet 5",
+    "url": "https://www.anthropic.com/news/claude-sonnet-5"
+  },
+  "45cd7975f6d2c6418eaabda2": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "45cd7975f6d2c6418eaabda2",
+    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T11:59:48.796522+00:00",
+    "source": "Simon Willison",
+    "title": "Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things",
+    "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b"
+  },
+  "49b1e9c4e2f58bf58a09ea37": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "49b1e9c4e2f58bf58a09ea37",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "A Scalable Pipeline for LLM-Teacher Distillation Labeling: Work-Stealing Job Scheduling and Memory-Aware GPU Concurrency",
+    "url": "http://arxiv.org/abs/2608.15975v1"
+  },
+  "4acb849c0f31d1ad8a1baa98": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "4acb849c0f31d1ad8a1baa98",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Simon Willison",
+    "title": "Quoting Dario Amodei",
+    "url": "https://simonwillison.net/2026/Aug/16/dario-amodei"
+  },
+  "4dd6c1508895bb8cdd9025ad": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "4dd6c1508895bb8cdd9025ad",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "PixRestore: Unified Image Restoration via Pixel Diffusion Transformer",
+    "url": "https://huggingface.co/papers/2608.16793"
+  },
+  "4f45cf68d2894ffb1d2dfc66": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "4f45cf68d2894ffb1d2dfc66",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Simon Willison",
+    "title": "sqlite-utils 4.2.1",
+    "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils-2"
+  },
+  "4f4e93f1e04c5d0c8b8786ea": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "4f4e93f1e04c5d0c8b8786ea",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Netflix Tech Blog",
+    "title": "How Netflix Simplified Batch Compute with Kueue",
+    "url": "https://netflixtechblog.com/how-netflix-simplified-batch-compute-with-kueue-87860682629c"
+  },
+  "4fdeab7a66fc6733dfa44c3f": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "4fdeab7a66fc6733dfa44c3f",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Simon Willison",
+    "title": "Qwen 3.8 27B scores 52 on the Artificial Analysis Intelligence Index",
+    "url": "https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52"
+  },
+  "4fe7cfdc805c917fd8b2617b": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "4fe7cfdc805c917fd8b2617b",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "devxhub/awesome-book-collection (336★)",
+    "url": "https://github.com/devxhub/awesome-book-collection"
+  },
+  "50082e654d59f3c3b6e967a9": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "50082e654d59f3c3b6e967a9",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "SPACE: Sample-cloud Predictive Adaptive Conformal Ellipsoids for Multivariate Time-Series Forecasting",
+    "url": "http://arxiv.org/abs/2608.17333v1"
+  },
+  "56def65bda0a22c6cb78fb99": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "56def65bda0a22c6cb78fb99",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Cloudflare",
+    "title": "Everything we launched during Agents Week",
+    "url": "https://blog.cloudflare.com/agents-week-review-august-2026"
+  },
+  "59d73a6e6a5a72b54ca94477": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "59d73a6e6a5a72b54ca94477",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Composing Flow-Matching Energies with Known Physics: Generation, OOD Detection, and Inversion on PDE Fields",
+    "url": "http://arxiv.org/abs/2608.18004v1"
+  },
+  "6023038a8912cd08a228ab14": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "6023038a8912cd08a228ab14",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
+    "url": "https://openai.com/index/asana"
+  },
+  "614f42f953288716063dcd00": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "614f42f953288716063dcd00",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Resource-Adaptive Primal-Dual Learning for One-Warehouse Multi-Store Systems with Censored Demand",
+    "url": "http://arxiv.org/abs/2608.14096v1"
+  },
+  "6170e378d729f7c483af9340": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "6170e378d729f7c483af9340",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Netflix Tech Blog",
+    "title": "Modeling Device Capabilities for Analytics",
+    "url": "https://netflixtechblog.com/modeling-device-capabilities-for-analytics-e7607acebde8"
+  },
+  "61f279fb9964a43a98f62d48": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "61f279fb9964a43a98f62d48",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "microsoft/agent-framework-go (527★)",
+    "url": "https://github.com/microsoft/agent-framework-go"
+  },
+  "638846f7379e653869d74e8b": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "638846f7379e653869d74e8b",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "HKUDS/nanobot (47171★)",
+    "url": "https://github.com/HKUDS/nanobot"
+  },
+  "63b423dc501be51b6a7f6758": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "63b423dc501be51b6a7f6758",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "TimeCopilot/timecopilot (591★)",
+    "url": "https://github.com/TimeCopilot/timecopilot"
+  },
+  "65b53cf0cac9619bb9508be0": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "65b53cf0cac9619bb9508be0",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Maintaining IoT Device Identification under Concept Drift via Budget-Aware Traffic Labeling",
+    "url": "http://arxiv.org/abs/2608.15465v1"
+  },
+  "6636a35509e75a58a83fc210": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "6636a35509e75a58a83fc210",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Netflix Tech Blog",
+    "title": "The Data Canary: How Netflix Validates Catalog Metadata",
+    "url": "https://netflixtechblog.com/the-data-canary-how-netflix-validates-catalog-metadata-18b699d58e36"
+  },
+  "67698adc3dfee8be38b61380": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "67698adc3dfee8be38b61380",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "EricLBuehler/candle-vllm (714★)",
+    "url": "https://github.com/EricLBuehler/candle-vllm"
+  },
+  "6c5aaefababff9fca6978549": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "6c5aaefababff9fca6978549",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "KV-Pipe: On the Relation Between KV Sharing and Pipeline Parallel Efficiency in LLMs",
+    "url": "http://arxiv.org/abs/2608.15943v1"
+  },
+  "6d4ec902c728a02128d0e9d0": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "6d4ec902c728a02128d0e9d0",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "Partnering with CodeAI to prepare the first AI generation",
+    "url": "https://openai.com/index/partnering-with-codeai"
+  },
+  "7167a366360279f90323e3e2": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "7167a366360279f90323e3e2",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Lilian Weng",
+    "title": "Adversarial Attacks on LLMs",
+    "url": "https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm"
+  },
+  "74b7cfe17cd9d51443796bc3": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "74b7cfe17cd9d51443796bc3",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Simon Willison",
+    "title": "Mojo🔥 is now open source",
+    "url": "https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source"
+  },
+  "74d008a4ca9626bab29fc653": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "74d008a4ca9626bab29fc653",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Beyond Binary Priorities: Multi-Tier SLA Scheduling for Large Language Model Serving",
+    "url": "http://arxiv.org/abs/2608.16336v1"
+  },
+  "79f38e749039b6531dfcbdda": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "79f38e749039b6531dfcbdda",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Simon Willison",
+    "title": "Markdown SVG upgrades",
+    "url": "https://simonwillison.net/2026/Aug/16/markdown-svg-upgrades"
+  },
+  "7acdb20efaf2f5438f67ed2d": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "7acdb20efaf2f5438f67ed2d",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "mlc-ai/modern-gpu-programming-for-mlsys (1189★)",
+    "url": "https://github.com/mlc-ai/modern-gpu-programming-for-mlsys"
+  },
+  "7af51f043b61b8b57b127ce6": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "7af51f043b61b8b57b127ce6",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "MervinPraison/PraisonAI (8920★)",
+    "url": "https://github.com/MervinPraison/PraisonAI"
+  },
+  "7d16f6d18397197e4155a015": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "7d16f6d18397197e4155a015",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Cloudflare",
+    "title": "Secure all your internal vibe-coded applications — in one click",
+    "url": "https://blog.cloudflare.com/workers-protected-by-access"
+  },
+  "80605906fea60f1ed8c1033b": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "80605906fea60f1ed8c1033b",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Simon Willison",
+    "title": "We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
+    "url": "https://simonwillison.net/2026/Aug/17/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-tra"
+  },
+  "8131dbd19ba1761e993495ec": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "8131dbd19ba1761e993495ec",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "facebookresearch/Kats (6452★)",
+    "url": "https://github.com/facebookresearch/Kats"
+  },
+  "820e0ba1e1ca4b01ebc18301": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "820e0ba1e1ca4b01ebc18301",
+    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T11:59:48.796522+00:00",
+    "source": "arXiv",
+    "title": "rl-triton: High-Performance Triton GPU Kernels for Reinforcement Learning Credit Assignment",
+    "url": "http://arxiv.org/abs/2608.17641v1"
+  },
+  "823fa8414275c4336449b338": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "823fa8414275c4336449b338",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Lilian Weng",
+    "title": "Thinking about High-Quality Human Data",
+    "url": "https://lilianweng.github.io/posts/2024-02-05-human-data-quality"
+  },
+  "8393c843a171d72369b2dfab": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "8393c843a171d72369b2dfab",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "ChatGPT Ads expands across Europe",
+    "url": "https://openai.com/index/chatgpt-ads-expands-across-europe"
+  },
+  "839a552b00636472cd17b4a6": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "839a552b00636472cd17b4a6",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Netflix Tech Blog",
+    "title": "In-House LLM Serving at Netflix",
+    "url": "https://netflixtechblog.com/in-house-llm-serving-at-netflix-a5a8e799ea2c"
+  },
+  "86795577504c7e670336bed7": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "86795577504c7e670336bed7",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "GLM-5.3 achieves 60 on Artificial Analysis",
+    "url": "https://twitter.com/ArtificialAnlys/status/2089830890709135426"
+  },
+  "8961949ff68916c066c183eb": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "8961949ff68916c066c183eb",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Simon Willison",
+    "title": "Don't classify. Hallucinate!",
+    "url": "https://simonwillison.net/2026/Aug/14/dont-classify-hallucinate"
+  },
+  "8999a59c4cb953486762c5c1": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "8999a59c4cb953486762c5c1",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "desplega-ai/agent-swarm (709★)",
+    "url": "https://github.com/desplega-ai/agent-swarm"
+  },
+  "8c4f615b69f62d59a2dca6c6": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "8c4f615b69f62d59a2dca6c6",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "Breaking the Apple–Siri DMA Deadlock Without Sacrificing Privacy or Security",
+    "url": "https://datatracker.ietf.org/doc/draft-das-execution-finality-ai-interoperability"
+  },
+  "90732607d4ed49a19f90b8df": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "90732607d4ed49a19f90b8df",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "CoinVE-200K: A Large-Scale High-Quality Dataset for Compositional Instruction-Guided Video Editing",
+    "url": "https://huggingface.co/papers/2608.17566"
+  },
+  "93544bde158e1490c12f0dd4": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "93544bde158e1490c12f0dd4",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Lilian Weng",
+    "title": "Scaling Laws, Carefully",
+    "url": "https://lilianweng.github.io/posts/2026-06-24-scaling-laws"
+  },
+  "94ed6d62a2d90355e2cc126a": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "94ed6d62a2d90355e2cc126a",
+    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T11:59:48.796522+00:00",
+    "source": "arXiv",
+    "title": "FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution",
+    "url": "http://arxiv.org/abs/2608.16157v1"
+  },
+  "9643aa56c4cb854de8b61514": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "9643aa56c4cb854de8b61514",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "skforecast/skforecast (1526★)",
+    "url": "https://github.com/skforecast/skforecast"
+  },
+  "9bc2fea669f83e1e583ae257": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "9bc2fea669f83e1e583ae257",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Cloudflare",
+    "title": "Give any website a WebMCP interface",
+    "url": "https://blog.cloudflare.com/webmcp"
+  },
+  "9c25f4ae7a186d68926fabf7": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "9c25f4ae7a186d68926fabf7",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "Pacing model development in an era of cyber-critical capabilities",
+    "url": "https://openai.com/index/pacing-model-development-cyber-capabilities"
+  },
+  "a3eb74c0eb99b2c14c281f72": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "a3eb74c0eb99b2c14c281f72",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "Show HN: Real-time argument duello game – AI judge decides who's right",
+    "url": "https://wram.chat"
+  },
+  "a419ee663be2b2df75bf0559": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "a419ee663be2b2df75bf0559",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Dynamic Regime-Aware Conformal Calibration for Reliable Economic Forecast Intervals under Multiple Distribution Shifts",
+    "url": "http://arxiv.org/abs/2608.17079v1"
+  },
+  "a52e9d71e445a46231be182c": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "a52e9d71e445a46231be182c",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Anthropic",
+    "title": "Claude Accelerates Protein Design",
+    "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design"
+  },
+  "a620bde9ffd4ec571470433f": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "a620bde9ffd4ec571470433f",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Lilian Weng",
+    "title": "Extrinsic Hallucinations in LLMs",
+    "url": "https://lilianweng.github.io/posts/2024-07-07-hallucination"
+  },
+  "a6ba1fa198351c30060838d4": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "a6ba1fa198351c30060838d4",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Simon Willison",
+    "title": "Northern Gannet",
+    "url": "https://simonwillison.net/2026/Aug/15/sighting-391300422"
+  },
+  "ab70204cacdfd6028c2c6c28": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "ab70204cacdfd6028c2c6c28",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation",
+    "url": "https://huggingface.co/papers/2608.17050"
+  },
+  "ad55208f067fb11b6a511110": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "ad55208f067fb11b6a511110",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Anthropic",
+    "title": "Riemann Zeta",
+    "url": "https://www.anthropic.com/research/riemann-zeta"
+  },
+  "b163b2c65aaffaeeef85ac8c": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "b163b2c65aaffaeeef85ac8c",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "byungsoo-oh/ml-systems-papers (643★)",
+    "url": "https://github.com/byungsoo-oh/ml-systems-papers"
+  },
+  "b30568b0f8144806660caa41": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "b30568b0f8144806660caa41",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "open-gitagent/gitagent (652★)",
+    "url": "https://github.com/open-gitagent/gitagent"
+  },
+  "b6a803a2c827c895d288913b": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "b6a803a2c827c895d288913b",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "microsoft/agent-framework (12914★)",
+    "url": "https://github.com/microsoft/agent-framework"
+  },
+  "baf07daff59f271b90795fd5": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "baf07daff59f271b90795fd5",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "How NVIDIA scales expertise with ChatGPT Work",
+    "url": "https://openai.com/index/nvidia/chatgpt-work"
+  },
+  "c050e190dad5877116fb73b3": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "c050e190dad5877116fb73b3",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "skyzh/tiny-llm (4506★)",
+    "url": "https://github.com/skyzh/tiny-llm"
+  },
+  "c21c34f5075aa224ef725193": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "c21c34f5075aa224ef725193",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "sktime/sktime (9946★)",
+    "url": "https://github.com/sktime/sktime"
+  },
+  "c24965ad067f0b5ded265b81": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "c24965ad067f0b5ded265b81",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "tensorflow/serving (6360★)",
+    "url": "https://github.com/tensorflow/serving"
+  },
+  "c3b0ed374d41680783fa20fc": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "c3b0ed374d41680783fa20fc",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "Introducing ChatGPT for Teens: Built for learning, backed by protections",
+    "url": "https://openai.com/index/chatgpt-for-teens"
+  },
+  "c81353905109f68e8c7c3645": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "c81353905109f68e8c7c3645",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Netflix Tech Blog",
+    "title": "GenRec: Towards LLM-Native Recommendation at Netflix",
+    "url": "https://netflixtechblog.com/genrec-towards-llm-native-recommendation-at-netflix-f20be6f643e3"
+  },
+  "c9a84293696c51a4bd2f8806": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "c9a84293696c51a4bd2f8806",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Netflix Tech Blog",
+    "title": "How and Why Netflix Built a Real-Time Distributed Graph: Part 3 — Querying the graph with gRPC…",
+    "url": "https://netflixtechblog.com/how-and-why-netflix-built-a-real-time-distributed-graph-part-3-querying-the-graph-with-grpc-0f3468349607"
+  },
+  "c9e7574f58cebba180a66540": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "c9e7574f58cebba180a66540",
+    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T11:59:48.796522+00:00",
+    "source": "arXiv",
+    "title": "SCENARIODIFF: A Scenario-level Guidance Framework for Multimodal Time Series Forecasting--Extended Version",
+    "url": "http://arxiv.org/abs/2608.17164v1"
+  },
+  "cc3174a4dbeddaa112529370": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "cc3174a4dbeddaa112529370",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "ModelTC/LightLLM (4227★)",
+    "url": "https://github.com/ModelTC/LightLLM"
+  },
+  "cc512ee9f9f07ae273ba6538": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "cc512ee9f9f07ae273ba6538",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Netflix Tech Blog",
+    "title": "GenPage: Towards End-to-End Generative Homepage Construction at Netflix",
+    "url": "https://netflixtechblog.com/genpage-towards-end-to-end-generative-homepage-construction-at-netflix-77146fba8a08"
+  },
+  "cdd8d819f4855db7d80d6e91": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "cdd8d819f4855db7d80d6e91",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Anthropic",
+    "title": "Improving Fable 5 S Biology Safeguards",
+    "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards"
+  },
+  "d04b3a384fab85a5931abb75": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "d04b3a384fab85a5931abb75",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "Show HN: Sofka – much faster k9s alternative in Rust",
+    "url": "https://github.com/nklmilojevic/sofka"
+  },
+  "d1200519beb92e885adda6b4": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "d1200519beb92e885adda6b4",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "Demystifying Agent Skills: Why They Work-Until They Don't",
+    "url": "https://huggingface.co/papers/2608.14036"
+  },
+  "d432e55d8767fdb89ba7be96": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "d432e55d8767fdb89ba7be96",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "What preferences can - and cannot - predict in multi-agent online learning",
+    "url": "http://arxiv.org/abs/2608.13810v1"
+  },
+  "d4ddf33cea9e35f16f4c06f4": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "d4ddf33cea9e35f16f4c06f4",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "Netflix/metaflow (10225★)",
+    "url": "https://github.com/Netflix/metaflow"
+  },
+  "d53b26aeefe63cd6fed4299b": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "d53b26aeefe63cd6fed4299b",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "aimhubio/aim (6236★)",
+    "url": "https://github.com/aimhubio/aim"
+  },
+  "d5e7959aa0306d0c634336a2": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "d5e7959aa0306d0c634336a2",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Cloudflare",
+    "title": "Unifying Workers AI and AI Gateway into a single AI control plane",
+    "url": "https://blog.cloudflare.com/workers-ai-gateway-unification"
+  },
+  "d6015945733756164c791c28": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "d6015945733756164c791c28",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Lilian Weng",
+    "title": "LLM Powered Autonomous Agents",
+    "url": "https://lilianweng.github.io/posts/2023-06-23-agent"
+  },
+  "d831938b547e28348ca6525f": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "d831938b547e28348ca6525f",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "sgl-project/sglang (32096★)",
+    "url": "https://github.com/sgl-project/sglang"
+  },
+  "d8ee545a09ddd0156af727f8": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "d8ee545a09ddd0156af727f8",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "PriorLabs/tabpfn-time-series (448★)",
+    "url": "https://github.com/PriorLabs/tabpfn-time-series"
+  },
+  "d91785938e4b758b446c0ce9": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "d91785938e4b758b446c0ce9",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "Hubris in the Age of Intelligent Medicine",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13365192"
+  },
+  "da611716312e8fdb48394d55": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "da611716312e8fdb48394d55",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "ZHangZHengEric/Sage (1203★)",
+    "url": "https://github.com/ZHangZHengEric/Sage"
+  },
+  "dcca84c4e1f973c3527abdfe": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "dcca84c4e1f973c3527abdfe",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "HuggingFace Papers",
+    "title": "Agent Lightning v1.0: Towards Harnessed Agentic RL",
+    "url": "https://huggingface.co/papers/2608.17528"
+  },
+  "dcd86cca046488bc30fea7f6": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "dcd86cca046488bc30fea7f6",
+    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T11:59:48.796522+00:00",
+    "source": "GitHub Search",
+    "title": "containers/ramalama (3003★)",
+    "url": "https://github.com/containers/ramalama"
+  },
+  "df6247db840a99f65ea3d7e7": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "df6247db840a99f65ea3d7e7",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Cloudflare",
+    "title": "From ranking to recommended: get your site ready to thrive in the age of AI agents",
+    "url": "https://blog.cloudflare.com/aeo"
+  },
+  "e29dc7792af98c7f9cadeedc": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "e29dc7792af98c7f9cadeedc",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "TRACE-CASH: Trial-History-Conditioned Reinforcement Learning for Adaptive Configuration Exploration in Time-Series CASH",
+    "url": "http://arxiv.org/abs/2608.16410v1"
+  },
+  "e59e91879b325c7b98284fe8": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "e59e91879b325c7b98284fe8",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Cloudflare",
+    "title": "Building an open Agentic Internet: readable, discoverable, callable, and payable",
+    "url": "https://blog.cloudflare.com/the-agentic-internet"
+  },
+  "e68246067eeddf6e1d69054b": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "e68246067eeddf6e1d69054b",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Anthropic",
+    "title": "Claude Text Watermark",
+    "url": "https://www.anthropic.com/news/claude-text-watermark"
+  },
+  "e8ba7172314e48e96a3e9a88": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "e8ba7172314e48e96a3e9a88",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "vllm-project/vllm (89432★)",
+    "url": "https://github.com/vllm-project/vllm"
+  },
+  "e94be2229d16f02cdd2fd884": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "e94be2229d16f02cdd2fd884",
+    "last_seen_at": "2026-08-19T11:59:48.796446+00:00",
+    "pushed": true,
+    "pushed_at": "2026-08-19T11:59:48.796522+00:00",
+    "source": "arXiv",
+    "title": "Beyond MSE: Rethinking the Evaluation Metric and Benchmarking for Irregular Time Series Forecasting",
+    "url": "http://arxiv.org/abs/2608.17293v1"
+  },
+  "ec60b400b8fb3b22186b22e3": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "ec60b400b8fb3b22186b22e3",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "Rethinking Irregular Time Series Forecasting from the Perspective of Basis Functions",
+    "url": "http://arxiv.org/abs/2608.17284v1"
+  },
+  "ec902a666ee4bf9214c0c5a0": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "ec902a666ee4bf9214c0c5a0",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "apache/systemds (1097★)",
+    "url": "https://github.com/apache/systemds"
+  },
+  "ef58f97dfcc78b1385811574": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "ef58f97dfcc78b1385811574",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "GitHub Search",
+    "title": "Nixtla/mlforecast (1271★)",
+    "url": "https://github.com/Nixtla/mlforecast"
+  },
+  "f0aa91974e0ad6ca58685787": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "f0aa91974e0ad6ca58685787",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "OpenAI",
+    "title": "Strengthening democratic oversight in national security",
+    "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security"
+  },
+  "f0aacbd08dd8175274309ff7": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "f0aacbd08dd8175274309ff7",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "Giving LLM the schema docs made its wrong SQL answers more plausible, not rarer",
+    "url": "https://quaesitor.eu/silent-failures"
+  },
+  "f2323421e5e51bb84aa70424": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "f2323421e5e51bb84aa70424",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Anthropic",
+    "title": "Reviewing The Evidence On Worker Retraining Programs",
+    "url": "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs"
+  },
+  "f3d7b89cf654e34d7b3c039d": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "f3d7b89cf654e34d7b3c039d",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Cloudflare",
+    "title": "The next generation of MCP",
+    "url": "https://blog.cloudflare.com/mcp-v2"
+  },
+  "f55a5f72b1e97c6a2cb55f81": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "f55a5f72b1e97c6a2cb55f81",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Hacker News",
+    "title": "The AI storage pitch is a load balancing problem",
+    "url": "https://dev.profullstack.com/~anthony/blog/023-post.html"
+  },
+  "f87e14ef06b6e708ed2ec4dc": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "f87e14ef06b6e708ed2ec4dc",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Anthropic",
+    "title": "Multiagent Systems",
+    "url": "https://www.anthropic.com/research/multiagent-systems"
+  },
+  "f954d86e102f2f9321c15cd2": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "f954d86e102f2f9321c15cd2",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Cloudflare",
+    "title": "Cloudflare AI Search: give your agents a search engine for your data",
+    "url": "https://blog.cloudflare.com/ai-search-easier"
+  },
+  "fe274f3d2b37bb63a639f90d": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "fe274f3d2b37bb63a639f90d",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "arXiv",
+    "title": "MELD: A Protocol for Merging Knowledge Across Distributed Agentic Memories",
+    "url": "http://arxiv.org/abs/2608.16357v1"
+  },
+  "ffc229d83891918f82064b92": {
+    "first_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "id": "ffc229d83891918f82064b92",
+    "last_seen_at": "2026-08-19T11:57:38.054305+00:00",
+    "pushed": false,
+    "pushed_at": "",
+    "source": "Anthropic",
+    "title": "Building Effective Agents",
+    "url": "https://www.anthropic.com/engineering/building-effective-agents"
+  }
+}
