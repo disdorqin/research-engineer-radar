@@ -26,12 +26,12 @@ jobs:
       SEMANTIC_SCHOLAR_KEY: ${{ secrets.SEMANTIC_SCHOLAR_KEY }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.11"
           cache: pip
@@ -50,7 +50,7 @@ jobs:
         run: python -m radar.main --config config/radar.json
 
       - name: Upload digest artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: radar-digest
           path: reports/*.md
@@ -60,7 +60,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
+
+          # The radar run modifies tracked state/report files. Commit those changes
+          # before rebasing; `git pull --rebase` refuses a dirty working tree.
           git add -f data/seen.json reports/*.md
-          git diff --cached --quiet || git commit -m "chore: update radar state and digest"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update radar state and digest"
+          fi
+
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
