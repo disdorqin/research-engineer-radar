@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import os
 import unittest
+from unittest.mock import patch
 
 from radar.query.planner import QueryPlan, plan_query
 from radar.research.search import ResearchResult, SourceEdge, SourceNode
@@ -9,7 +11,8 @@ from radar.telegram.bot import _ordinal, render_search_result
 
 class InteractiveResearchTests(unittest.TestCase):
     def test_fallback_planner_understands_time_and_trace_intent(self) -> None:
-        plan = plan_query("找最近一周 Agent Skills 的一手来源并追溯源头", {})
+        with patch.dict(os.environ, {"LLM_API_KEY": "", "LLM_BASE_URL": "", "LLM_MODEL": ""}):
+            plan = plan_query("找最近一周 Agent Skills 的一手来源并追溯源头", {})
         self.assertEqual(plan.timeframe_days, 7)
         self.assertTrue(plan.primary_only)
         self.assertGreaterEqual(plan.depth, 2)
